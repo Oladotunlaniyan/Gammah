@@ -25,21 +25,46 @@ export default function AboutSection() {
       <div className="absolute top-1/3 -left-32 w-96 h-96 bg-warm-gold/5 blur-[140px] rounded-full pointer-events-none"></div>
       <div className="absolute bottom-1/4 -right-32 w-96 h-96 bg-electric-teal/5 blur-[140px] rounded-full pointer-events-none"></div>
 
-      <div className="max-w-7xl mx-auto px-6 md:px-12 space-y-16 md:space-y-24">
+        <div className="max-w-7xl mx-auto px-6 md:px-12 space-y-16 md:space-y-24">
+<motion.div
+    className="space-y-3 text-left"
+    initial="hidden"
+    whileInView="visible"
+    viewport={{ once: true, margin: "-80px" }}
+    variants={{
+      hidden: {},
+      visible: {
+        transition: {
+          staggerChildren: 0.15,
+        },
+      },
+    }}
+  >
+    <motion.div
+      className="flex items-center space-x-3"
+      variants={{
+        hidden: { opacity: 0, x: -20 },
+        visible: { opacity: 1, x: 0 },
+      }}
+      transition={{ duration: 0.6, ease: "easeOut" }}
+    >
+      <span className="w-8 h-0.5 bg-warm-gold"></span>
+      <span className="font-sans font-bold text-xs md:text-sm tracking-widest text-warm-gold uppercase">
+        ABOUT US
+      </span>
+    </motion.div>
 
-        {/* SECTION HEADER: DASH + ABOUT US LABEL */}
-        <div className="space-y-3 text-left">
-          <div className="flex items-center space-x-3">
-            <span className="w-8 h-[2px] bg-warm-gold"></span>
-            <span className="font-sans font-bold text-xs md:text-sm tracking-widest text-warm-gold uppercase">
-              ABOUT US
-            </span>
-          </div>
-          <h2 className="font-sans font-extrabold text-white text-3xl sm:text-4xl lg:text-5xl tracking-tight leading-tight max-w-2xl">
-            Recognize more about our company
-          </h2>
-        </div>
-
+    <motion.h2
+      className="font-sans font-extrabold text-white text-3xl sm:text-4xl lg:text-5xl tracking-tight leading-tight max-w-3xl"
+      variants={{
+        hidden: { opacity: 0, y: 24 },
+        visible: { opacity: 1, y: 0 },
+      }}
+      transition={{ duration: 0.7, ease: "easeOut" }}
+    >
+      Independent project consultancy for Africa's built environment.
+    </motion.h2>
+  </motion.div>
         {/* MAIN ABOUT US GRID LAYOUT (MATCHING REFERENCE DESIGN) */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-stretch">
 
@@ -95,12 +120,11 @@ export default function AboutSection() {
               <div className="absolute inset-0 bg-navy-dark/40 group-hover:bg-navy-dark/20 transition-colors duration-300"></div>
 
               {/* Central Animated Play Button */}
-              <div className="absolute inset-0 flex items-center justify-center">
-                <div className="w-16 h-16 sm:w-20 sm:h-20 rounded-full bg-white/90 group-hover:bg-warm-gold text-navy-dark flex items-center justify-center shadow-[0_0_30px_rgba(201,169,110,0.5)] transform group-hover:scale-110 transition-all duration-300">
-                  <Play className="w-7 h-7 sm:w-8 sm:h-8 fill-current ml-1" />
-                </div>
-              </div>
-
+             <div className="absolute inset-0 flex items-center justify-center">
+  <div className="w-10 h-10 sm:w-20 sm:h-20 rounded-full bg-white/90 group-hover:bg-warm-gold text-navy-dark hover:text-white flex items-center justify-center shadow-[0_0_30px_rgba(201,169,110,0.5)] transform group-hover:scale-110 transition-all duration-300">
+    <Play className="w-4 h-4 sm:w-8 sm:h-8 fill-current ml-0.5 sm:ml-1" />
+  </div>
+</div>
               {/* Top Right Label */}
               <div className="absolute top-4 right-4 bg-navy-dark/80 backdrop-blur-md px-3 py-1 rounded-full border border-white/10">
                 <span className="font-sans text-[11px] font-semibold tracking-wider text-electric-teal uppercase">
@@ -122,10 +146,10 @@ export default function AboutSection() {
               <div className="pt-2">
                 <a
                   href="#contact"
-                  className="inline-flex items-center space-x-3 bg-navy-dark hover:bg-warm-gold text-white hover:text-navy-dark border border-warm-gold/50 font-sans font-bold text-sm px-7 py-3.5 rounded-xl transition-all duration-300 shadow-md group"
+                  className="inline-flex items-center space-x-3 bg-navy-dark hover:bg-warm-gold text-white border border-warm-gold/50 font-sans font-bold text-sm px-7 py-3.5 rounded-xl transition-all duration-300 shadow-md group"
                 >
                   <span>About Us</span>
-                  <ArrowRight className="w-4 h-4 text-warm-gold group-hover:text-navy-dark transition-colors duration-200" />
+                  <ArrowRight className="w-4 h-4 text-warm-gold group-hover:text-white transition-colors duration-200" />
                 </a>
               </div>
             </div>
@@ -174,13 +198,13 @@ export default function AboutSection() {
                 />
               </div>
 
-              <p className="font-sans text-sm text-[#b8c4d0] max-w-md mx-auto">
+              <p className="font-sans text-sm text-text-body max-w-md mx-auto">
                 Experience how Gamah Projects Consulting coordinates architects, engineers, quantity surveyors, and contractors to ensure 100% fiduciary protection for clients across Africa.
               </p>
 
               <button
                 onClick={closeModal}
-                className="bg-warm-gold text-navy-dark font-sans font-bold px-6 py-2.5 rounded-full text-sm hover:bg-warm-gold/90 transition-colors"
+                className="bg-warm-gold text-navy-dark font-sans font-bold px-6 py-2.5 rounded-full text-sm hover:bg-warm-gold/90 hover:text-white transition-colors"
               >
                 Close Preview
               </button>

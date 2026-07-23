@@ -1,6 +1,7 @@
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
 import AboutSection from "./components/AboutSection";
+import ServicesSection from "./components/ServiceSection";
 
 export default function App() {
   return (
@@ -10,6 +11,7 @@ export default function App() {
       <main className="relative z-10">
         <Hero />
         <AboutSection />
+        <ServicesSection />
       </main>
 
       {/* Elegant Minimal Footer */}
