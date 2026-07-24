@@ -6,7 +6,7 @@ import {
   Play
 } from "lucide-react";
 import verticalEngineersImg from "../assets/images/photo_2026-07-22_12-04-05.jpg";
-import videoThumbImg from "../assets/images/video_2026-07-21_17-31-00.mp4";
+import videoThumbImg from "../assets/images/IMG_6925.MP4";
 
 export default function AboutSection() {
   const [isVideoModalOpen, setIsVideoModalOpen] = useState(false);
@@ -138,8 +138,7 @@ export default function AboutSection() {
               <h3 className="font-sans font-bold text-white text-xl sm:text-2xl leading-snug">
                 Delivering Unbiased Project Management Consultancy
               </h3>
-
-              <p className="font-sans text-sm md:text-base text-text-body leading-relaxed w-full text-justify">
+              <p className="font-sans text-sm md:text-base text-text-body leading-relaxed md:leading-loose w-full text-left md:text-justify">
   While project management services exist within architecture, engineering, quantity surveying, and contracting firms, they are often delivered in the interest of those professional disciplines. Gamah Projects Consulting Ltd fills this gap by providing integrated project management consultancy services that coordinate all project stakeholders through proven project management methodologies, digital project controls, quality assurance processes, and governance frameworks used on world-class developments to help clients deliver better projects.
 </p>
 

@@ -7,8 +7,8 @@ import slide3 from "../assets/images/photo_2026-07-21_18-39-56.jpg";
 
 const HEADLINE_LINES = ["Delivering Better", "Projects Across", "Africa"];
 const TYPE_SPEED_MS = 45;
-const LINE_PAUSE_MS = 250;
-const START_DELAY_MS = 300;
+const LINE_PAUSE_MS = 150;
+const START_DELAY_MS = 200;
 
 const SLIDES = [
   { src: slide1, alt: "17-story commercial office tower with two basement floors in the heart of Liverpool street, London." },
@@ -16,7 +16,7 @@ const SLIDES = [
   { src: slide3, alt: " Gamah Projects development" },
 ];
 
-const SLIDE_DURATION_MS = 3000;
+const SLIDE_DURATION_MS = 2000;
 const FADE_DURATION_S = 1.2;
 
 export default function Hero() {
@@ -174,7 +174,7 @@ export default function Hero() {
       <div className="relative w-full max-w-7xl mx-auto px-6 md:px-12 z-10 pt-24 md:pt-16 pb-12 flex flex-col justify-center h-full">
         <div className="lg:max-w-[60%] flex flex-col space-y-6 md:space-y-8 text-left">
           <h1
-            className="font-sans font-extrabold text-white tracking-tight leading-[1.1] text-5xl sm:text-9xl md:text-6xl lg:text-[4.5rem]"
+            className="font-sans font-extrabold text-white tracking-tight leading-[1.1] text-4xl sm:text-9xl md:text-6xl lg:text-[4.5rem]"
             style={{ letterSpacing: "-0.03em" }}
             aria-label="Delivering Better Projects Across Africa"
           >
