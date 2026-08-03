@@ -1,11 +1,11 @@
 import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import { motion, AnimatePresence } from "motion/react";
 import { Menu, X, ArrowRight } from "lucide-react";
 
 export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
-  const [menuOpen, setMenuOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -16,10 +16,10 @@ export default function Navbar() {
   }, []);
 
   const navLinks = [
-    { name: "Services", href: "services" },
-    { name: "About", href: "about" },
-    { name: "Portfolio", href: "portfolio" },
-    { name: "Contact", href: "contact" },
+    { name: "Services", href: "/services" },
+    { name: "About", href: "/about" },
+    { name: "Portfolio", href: "/portfolio" },
+    { name: "Contact", href: "/contact" },
   ];
 
   // Overlay container variants for staggered mobile menu links
@@ -48,7 +48,7 @@ export default function Navbar() {
 
   const linkVariants = {
     closed: { opacity: 0, y: 20 },
-    opened: { opacity: 1, y: 0, transition: { duration: 0.4, ease: "easeOut" } as const},
+    opened: { opacity: 1, y: 0, transition: { duration: 0.4, ease: "easeOut" } as const },
   };
 
   return (
@@ -62,41 +62,42 @@ export default function Navbar() {
       >
         <div className="max-w-7xl mx-auto px-6 md:px-12">
           <nav className="flex items-center justify-between" aria-label="Main Navigation">
-          {/* Logo: left by default, centers within the mobile bar when menu is open */}
-                 <motion.div
-  layout
-  transition={{ type: "spring", stiffness: 260, damping: 30 }}
-  className={`flex md:w-auto w-full items-center ${isOpen ? "justify-center" : "justify-start md:justify-start"}`}
->
-  <a href="/" className="flex items-center space-x-3 group" aria-label="Gamah Projects Consulting Home">
-    <span className="font-sans font-extrabold text-2xl tracking-tight text-white group-hover:text-warm-gold transition-colors duration-200">
-      GAMAH
-    </span>
-  </a>
-</motion.div>
+            {/* Logo: left by default, centers within the mobile bar when menu is open */}
+            <motion.div
+              layout
+              transition={{ type: "spring", stiffness: 260, damping: 30 }}
+              className={`flex md:w-auto w-full items-center ${isOpen ? "justify-center" : "justify-start md:justify-start"}`}
+            >
+              <Link to="/" className="flex items-center space-x-3 group" aria-label="Gamah Projects Consulting Home">
+                <span className="font-sans font-extrabold text-2xl tracking-tight text-white group-hover:text-warm-gold transition-colors duration-200">
+                  GAMAH
+                </span>
+              </Link>
+            </motion.div>
+
             {/* Desktop Center Links */}
             <div className="hidden md:flex items-center space-x-8">
               {navLinks.map((link) => (
-                <a
+                <Link
                   key={link.name}
-                  href={link.href}
+                  to={link.href}
                   className="font-sans font-medium text-sm text-text-body hover:text-warm-gold tracking-wide transition-colors duration-200 relative group py-2"
                 >
                   {link.name}
                   <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-warm-gold transition-all duration-300 group-hover:w-full"></span>
-                </a>
+                </Link>
               ))}
             </div>
 
             {/* Desktop Right Button */}
             <div className="hidden md:block">
-              <a
-                href="#contact"
+              <Link
+                to="/contact"
                 className="inline-flex items-center space-x-2 bg-warm-gold hover:bg-warm-gold/90 text-white font-sans font-bold text-sm px-8 py-3 rounded-full transition-all duration-300 hover:shadow-[0_4px_20px_rgba(201,169,110,0.3)] transform hover:scale-[1.02]"
               >
                 <span className="text-md">Get in Touch</span>
                 <ArrowRight className="w-6 h-6" />
-              </a>
+              </Link>
             </div>
 
             {/* Mobile Hamburger menu (Absolutely positioned to stay on the right while logo stays centered) */}
@@ -130,25 +131,25 @@ export default function Navbar() {
             <nav className="flex flex-col space-y-8 text-center z-10" aria-label="Mobile Navigation Menu">
               {navLinks.map((link) => (
                 <motion.div key={link.name} variants={linkVariants}>
-                  <a
-                    href={link.href}
+                  <Link
+                    to={link.href}
                     onClick={() => setIsOpen(false)}
                     className="font-sans font-bold text-3xl text-text-body hover:text-warm-gold focus:text-warm-gold transition-colors duration-200 tracking-wide block"
                   >
                     {link.name}
-                  </a>
+                  </Link>
                 </motion.div>
               ))}
 
               <motion.div variants={linkVariants} className="pt-8">
-                <a
-                  href="#contact"
+                <Link
+                  to="/contact"
                   onClick={() => setIsOpen(false)}
                   className="inline-flex items-center space-x-2 bg-warm-gold hover:bg-warm-gold/90 text-white font-sans font-semibold text-lg px-8 py-4 rounded-full transition-all duration-300 transform hover:scale-[1.02] shadow-[0_4px_20px_rgba(201,169,110,0.2)]"
                 >
                   <span>Get in Touch</span>
                   <ArrowRight className="w-5 h-5" />
-                </a>
+                </Link>
               </motion.div>
             </nav>
           </motion.div>
