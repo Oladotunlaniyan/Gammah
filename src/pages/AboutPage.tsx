@@ -80,7 +80,7 @@ export default function AboutPage() {
   ];
 
   return (
-    <div className="pt-16 md:pt-18 bg-navy-dark text-text-body font-sans space-y-0">
+    <div className="pt-16 md:pt-18 bg-navy-dark text-text-body font-sans space-y-0 h-screen">
       {/* ABOUT PAGE HEADER HERO */}
       <section className="relative w-full overflow-hidden bg-[#0d1321]">
         <div className="relative min-h-110 lg:min-h-130 w-full flex items-center pb-40 lg:pb-52 pt-16 md:pt-24">

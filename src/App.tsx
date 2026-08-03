@@ -13,11 +13,7 @@ export default function App() {
   return ( 
     <Router>
       <ScrollToTop />
-      <div className="relative min-h-screen bg-navy-dark text-text-body font-sans selection:bg-warm-gold selection:text-navy-dark flex flex-col justify-between">
-        {/* Dynamic Background Noise/Grid Layer */}
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(201,169,110,0.03)_0%,transparent_50%)] pointer-events-none z-0"></div>
-
-        {/* Primary Sticky Header */}
+      <div className="flex min-h-screen flex-col">
         <Navbar />
 
         <main className="relative z-10 grow">
