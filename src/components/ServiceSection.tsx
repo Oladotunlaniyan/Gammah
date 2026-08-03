@@ -61,7 +61,7 @@ export default function ServicesSection() {
         {/* CENTERED MAIN HEADING (MATCHING REFERENCE IMAGE) */}
         <div className="text-center max-w-8xl mx-auto space-y-1 md:space-y-2">
           <h2 className="font-sans font-extrabold text-white text-3xl sm:text-4xl lg:text-5xl tracking-tight leading-[1.1]">
-            Everything you need to plan, control, and deliver construction excellence
+            Everything you need to plan, control, and deliver project excellence
           </h2>
         </div>
 
@@ -156,7 +156,7 @@ export default function ServicesSection() {
             {/* Bottom CTA Button (Exact Match to Reference Black/Gold Button) */}
             <div className="pt-8">
               <a
-                href="#services"
+                href="services"
                 className="inline-flex items-center space-x-3 bg-white hover:bg-warm-gold font-mono font-bold text-xs uppercase tracking-wider px-6 py-4 rounded-none transition-all duration-300 shadow-lg group"
               >
                 <span className="text-[#4a90d9] group-hover:text-white">▪</span>

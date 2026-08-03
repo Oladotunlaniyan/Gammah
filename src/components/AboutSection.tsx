@@ -144,7 +144,7 @@ export default function AboutSection() {
 
               <div className="pt-2">
                 <a
-                  href="#contact"
+                  href="#about"
                   className="inline-flex items-center space-x-3 bg-navy-dark hover:bg-warm-gold text-white border border-warm-gold/50 font-sans font-bold text-sm px-7 py-3.5 rounded-xl transition-all duration-300 shadow-md group"
                 >
                   <span>About Us</span>

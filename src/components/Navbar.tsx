@@ -16,10 +16,10 @@ export default function Navbar() {
   }, []);
 
   const navLinks = [
-    { name: "Services", href: "#services" },
-    { name: "About", href: "#about" },
-    { name: "Portfolio", href: "#portfolio" },
-    { name: "Contact", href: "#contact" },
+    { name: "Services", href: "services" },
+    { name: "About", href: "about" },
+    { name: "Portfolio", href: "portfolio" },
+    { name: "Contact", href: "contact" },
   ];
 
   // Overlay container variants for staggered mobile menu links
@@ -68,7 +68,7 @@ export default function Navbar() {
   transition={{ type: "spring", stiffness: 260, damping: 30 }}
   className={`flex md:w-auto w-full items-center ${isOpen ? "justify-center" : "justify-start md:justify-start"}`}
 >
-  <a href="#" className="flex items-center space-x-3 group" aria-label="Gamah Projects Consulting Home">
+  <a href="/" className="flex items-center space-x-3 group" aria-label="Gamah Projects Consulting Home">
     <span className="font-sans font-extrabold text-2xl tracking-tight text-white group-hover:text-warm-gold transition-colors duration-200">
       GAMAH
     </span>
