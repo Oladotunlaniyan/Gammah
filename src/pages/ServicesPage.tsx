@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import { motion, AnimatePresence } from "motion/react";
 import {
   ArrowRight,
   ShieldCheck,
@@ -34,6 +35,21 @@ interface ServicePillar {
   sectors: string[];
   scopeDetails: string[];
 }
+
+// Reusable motion variants
+const fadeUp = {
+  hidden: { opacity: 0, y: 24 },
+  visible: { opacity: 1, y: 0 }
+};
+
+const staggerContainer = {
+  hidden: {},
+  visible: {
+    transition: {
+      staggerChildren: 0.1
+    }
+  }
+};
 
 export default function ServicesPage() {
   const [selectedService, setSelectedService] = useState<ServicePillar | null>(null);
@@ -158,61 +174,97 @@ export default function ServicesPage() {
 
   return (
     <div className="pt-20 md:pt-24 bg-[#0a0e17] text-[#b8c4d0] font-sans min-h-screen">
-      
+
       {/* 1. HERO BANNER */}
       <section className="relative w-full border-b border-white/10 bg-[#0d1321] overflow-hidden py-20 md:py-28">
         {/* Subtle grid backdrop */}
         <div className="absolute inset-0 bg-[linear-gradient(to_right,#1f293710_1px,transparent_1px),linear-gradient(to_bottom,#1f293710_1px,transparent_1px)] bg-[size:32px_32px]"></div>
-        <div className="absolute top-0 right-1/4 w-96 h-96 bg-warm-gold/5 blur-3xl pointer-events-none"></div>
+        <motion.div
+          className="absolute top-0 right-1/4 w-96 h-96 bg-warm-gold/5 blur-3xl pointer-events-none"
+          animate={{ opacity: [0.5, 1, 0.5] }}
+          transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
+        ></motion.div>
 
-        <div className="max-w-7xl mx-auto px-6 md:px-12 relative z-10 space-y-6">
-          <div className="flex items-center space-x-2 text-xs font-mono font-bold text-warm-gold uppercase tracking-widest bg-warm-gold/10 border border-warm-gold/30 px-3.5 py-1.5 rounded-full w-fit">
+        <motion.div
+          className="max-w-7xl mx-auto px-6 md:px-12 relative z-10 space-y-6"
+          initial="hidden"
+          animate="visible"
+          variants={staggerContainer}
+        >
+          <motion.div
+            variants={fadeUp}
+            transition={{ duration: 0.6, ease: "easeOut" }}
+            className="flex items-center space-x-2 text-xs font-mono font-bold text-warm-gold uppercase tracking-widest bg-warm-gold/10 border border-warm-gold/30 px-3.5 py-1.5 rounded-full w-fit"
+          >
             <Compass className="w-3.5 h-3.5 mr-1" />
             <span>What We Do &bull; Services</span>
-          </div>
+          </motion.div>
 
-          <div className="max-w-3xl space-y-4">
+          <motion.div
+            variants={fadeUp}
+            transition={{ duration: 0.6, ease: "easeOut" }}
+            className="max-w-3xl space-y-4"
+          >
             <h1 className="font-sans font-black text-white text-4xl sm:text-5xl lg:text-6xl tracking-tight leading-[1.1]">
               Global Expertise, Independent Project Controls
             </h1>
             <p className="font-sans text-base sm:text-lg text-[#94a3b8] leading-relaxed">
               We bring UK-grade commercial governance and COREN structural discipline to capital projects across West Africa. As an independent PMC, we do not build—we protect your investment, enforce standards, and eliminate construction risk.
             </p>
-          </div>
+          </motion.div>
 
           {/* Quick Sector Tags */}
-          <div className="pt-4 flex flex-wrap items-center gap-3 text-xs font-mono text-[#94a3b8]">
+          <motion.div
+            variants={fadeUp}
+            transition={{ duration: 0.6, ease: "easeOut" }}
+            className="pt-4 flex flex-wrap items-center gap-3 text-xs font-mono text-[#94a3b8]"
+          >
             <span className="text-white font-semibold uppercase tracking-wider">Key Sectors:</span>
             <span className="bg-white/5 border border-white/10 px-3 py-1 rounded-full">Real Estate &amp; Estates</span>
             <span className="bg-white/5 border border-white/10 px-3 py-1 rounded-full">Infrastructure &amp; Energy</span>
             <span className="bg-white/5 border border-white/10 px-3 py-1 rounded-full">Institutional &amp; Diaspora Capital</span>
             <span className="bg-white/5 border border-white/10 px-3 py-1 rounded-full">Commercial Developments</span>
-          </div>
-        </div>
+          </motion.div>
+        </motion.div>
       </section>
 
       {/* 2. SIDE-BY-SIDE CAPABILITY CARDS GRID */}
       <section className="py-20 md:py-28">
         <div className="max-w-7xl mx-auto px-6 md:px-12 space-y-12">
-          
-          <div className="space-y-3">
+
+          <motion.div
+            className="space-y-3"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-80px" }}
+            transition={{ duration: 0.6, ease: "easeOut" }}
+          >
             <h2 className="font-sans font-black text-white text-3xl sm:text-4xl tracking-tight">
               Our Core Services
             </h2>
             <p className="font-sans text-sm sm:text-base text-[#94a3b8] max-w-2xl">
               Click any service card to view complete scope deliverables, specialized modules, and engagement options.
             </p>
-          </div>
+          </motion.div>
 
           {/* Grid Layout: 2-column or 3-column side-by-side cards */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+          <motion.div
+            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8"
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: "-80px" }}
+            variants={staggerContainer}
+          >
             {pillars.map((pillar) => {
               const IconComp = pillar.icon;
               return (
-                <div
+                <motion.div
                   key={pillar.id}
+                  variants={fadeUp}
+                  transition={{ duration: 0.5, ease: "easeOut" }}
+                  whileHover={{ y: -6 }}
                   onClick={() => setSelectedService(pillar)}
-                  className="group cursor-pointer rounded-3xl bg-[#0d1321] border border-white/10 p-6 sm:p-8 hover:border-warm-gold/50 transition-all duration-300 shadow-xl flex flex-col justify-between space-y-6 relative overflow-hidden hover:-translate-y-1"
+                  className="group cursor-pointer rounded-3xl bg-[#0d1321] border border-white/10 p-6 sm:p-8 hover:border-warm-gold/50 transition-colors duration-300 shadow-xl flex flex-col justify-between space-y-6 relative overflow-hidden"
                 >
                   {/* Card Header & Icon */}
                   <div className="space-y-5">
@@ -255,10 +307,10 @@ export default function ServicesPage() {
                       <ChevronRight className="w-4 h-4" />
                     </div>
                   </div>
-                </div>
+                </motion.div>
               );
             })}
-          </div>
+          </motion.div>
 
         </div>
       </section>
@@ -266,20 +318,36 @@ export default function ServicesPage() {
       {/* 3. WHY INDEPENDENT MANAGEMENT MATTERS (COMPARISON MATRIX) */}
       <section className="py-20 md:py-28 border-y border-white/10 bg-[#0d1321]">
         <div className="max-w-7xl mx-auto px-6 md:px-12 space-y-16">
-          
-          <div className="text-center max-w-3xl mx-auto space-y-4">
+
+          <motion.div
+            className="text-center max-w-3xl mx-auto space-y-4"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-80px" }}
+            transition={{ duration: 0.6, ease: "easeOut" }}
+          >
             <h2 className="font-sans font-black text-white text-3xl sm:text-4xl lg:text-5xl tracking-tight">
               Why Independent Oversight Makes the Difference
             </h2>
             <p className="font-sans text-sm sm:text-base text-[#94a3b8]">
               Traditional construction setups create inherent conflicts of interest. Here is how our independent consultancy model protects your project.
             </p>
-          </div>
+          </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            
+          <motion.div
+            className="grid grid-cols-1 md:grid-cols-2 gap-8"
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: "-80px" }}
+            variants={staggerContainer}
+          >
+
             {/* Traditional Model Card */}
-            <div className="p-8 rounded-3xl bg-white/[0.02] border border-white/10 space-y-6">
+            <motion.div
+              variants={{ hidden: { opacity: 0, x: -30 }, visible: { opacity: 1, x: 0 } }}
+              transition={{ duration: 0.6, ease: "easeOut" }}
+              className="p-8 rounded-3xl bg-white/[0.02] border border-white/10 space-y-6"
+            >
               <div className="flex items-center space-x-3 text-[#f87171]">
                 <X className="w-6 h-6" />
                 <h3 className="font-sans font-extrabold text-white text-xl">
@@ -304,10 +372,14 @@ export default function ServicesPage() {
                   <span>Budget overruns paid upfront without milestone verification.</span>
                 </li>
               </ul>
-            </div>
+            </motion.div>
 
             {/* Gamah Independent Model Card */}
-            <div className="p-8 rounded-3xl bg-navy-dark border border-warm-gold/40 space-y-6 shadow-2xl relative">
+            <motion.div
+              variants={{ hidden: { opacity: 0, x: 30 }, visible: { opacity: 1, x: 0 } }}
+              transition={{ duration: 0.6, ease: "easeOut" }}
+              className="p-8 rounded-3xl bg-navy-dark border border-warm-gold/40 space-y-6 shadow-2xl relative"
+            >
               <div className="absolute top-4 right-4 bg-warm-gold/10 text-warm-gold border border-warm-gold/30 px-2.5 py-0.5 rounded text-[10px] font-mono uppercase font-bold">
                 Client Shield
               </div>
@@ -335,30 +407,47 @@ export default function ServicesPage() {
                   <span>Escrow payment authorization only after physical work is measured on site.</span>
                 </li>
               </ul>
-            </div>
+            </motion.div>
 
-          </div>
+          </motion.div>
 
         </div>
       </section>
-         <section className="py-20 md:py-28 border-t border-white/10 bg-[#0d1321]/60">
+      <section className="py-20 md:py-28 border-t border-white/10 bg-[#0d1321]/60">
         <div className="max-w-7xl mx-auto px-6 md:px-12 space-y-16">
-          
+
           {/* Section Header */}
-          <div className="max-w-5xl space-y-4">
+          <motion.div
+            className="max-w-5xl space-y-4"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-80px" }}
+            transition={{ duration: 0.6, ease: "easeOut" }}
+          >
             <h2 className="font-sans font-black text-white text-3xl sm:text-4xl lg:text-5xl tracking-tight">
               Pricing Structure
             </h2>
             <p className="font-sans text-sm sm:text-base md:text-lg text-[#94a3b8] leading-relaxed">
               Our fee structure is designed to be transparent, flexible, and aligned with project size and complexity. We use three primary pricing models depending on the scope, project stage and level of engagement required, adopting a hybrid pricing strategy that balances recurring income with project-based fees to ensure healthy cash flow and profitability.
             </p>
-          </div>
+          </motion.div>
 
           {/* Pricing Models 3-Column Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-stretch">
-            
+          <motion.div
+            className="grid grid-cols-1 md:grid-cols-3 gap-8 items-stretch"
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: "-80px" }}
+            variants={staggerContainer}
+          >
+
             {/* Model 1: Fixed Fee */}
-            <div className="rounded-3xl bg-[#0d1321] border border-white/10 p-8 flex flex-col justify-between space-y-6 shadow-xl hover:border-warm-gold/40 transition-all duration-300 relative group">
+            <motion.div
+              variants={fadeUp}
+              transition={{ duration: 0.5, ease: "easeOut" }}
+              whileHover={{ y: -4 }}
+              className="rounded-3xl bg-[#0d1321] border border-white/10 p-8 flex flex-col justify-between space-y-6 shadow-xl hover:border-warm-gold/40 transition-colors duration-300 relative group"
+            >
               <div className="space-y-6">
                 <div className="space-y-2">
                   <h3 className="font-sans font-black text-white text-xl sm:text-2xl tracking-tight">
@@ -419,10 +508,15 @@ export default function ServicesPage() {
                   <ArrowRight className="w-3.5 h-3.5" />
                 </Link>
               </div>
-            </div>
+            </motion.div>
 
             {/* Model 2: Monthly Retainer */}
-            <div className="rounded-3xl bg-[#0d1321] border border-warm-gold/40 p-8 flex flex-col justify-between space-y-6 shadow-2xl relative group hover:border-warm-gold/70 transition-all duration-300">
+            <motion.div
+              variants={fadeUp}
+              transition={{ duration: 0.5, ease: "easeOut" }}
+              whileHover={{ y: -4 }}
+              className="rounded-3xl bg-[#0d1321] border border-warm-gold/40 p-8 flex flex-col justify-between space-y-6 shadow-2xl relative group hover:border-warm-gold/70 transition-colors duration-300"
+            >
               <div className="space-y-6">
 
                 <div className="space-y-2">
@@ -461,10 +555,15 @@ export default function ServicesPage() {
                   <ArrowRight className="w-3.5 h-3.5" />
                 </Link>
               </div>
-            </div>
+            </motion.div>
 
             {/* Model 3: Percentage of Project Value */}
-            <div className="rounded-3xl bg-[#0d1321] border border-white/10 p-8 flex flex-col justify-between space-y-6 shadow-xl hover:border-warm-gold/40 transition-all duration-300 relative group">
+            <motion.div
+              variants={fadeUp}
+              transition={{ duration: 0.5, ease: "easeOut" }}
+              whileHover={{ y: -4 }}
+              className="rounded-3xl bg-[#0d1321] border border-white/10 p-8 flex flex-col justify-between space-y-6 shadow-xl hover:border-warm-gold/40 transition-colors duration-300 relative group"
+            >
               <div className="space-y-6">
                 <div className="space-y-2">
                   <h3 className="font-sans font-black text-white text-xl sm:text-2xl tracking-tight">
@@ -513,17 +612,27 @@ export default function ServicesPage() {
                   <ArrowRight className="w-3.5 h-3.5" />
                 </Link>
               </div>
-            </div>
+            </motion.div>
 
-          </div>
+          </motion.div>
 
         </div>
       </section>
       {/* 5. CONSULTATION CTA FOOTER BANNER */}
       <section className="py-24 bg-[#0d1321] text-center border-t border-white/10 relative overflow-hidden">
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-warm-gold/5 blur-3xl rounded-full pointer-events-none"></div>
+        <motion.div
+          className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-warm-gold/5 blur-3xl rounded-full pointer-events-none"
+          animate={{ opacity: [0.5, 1, 0.5] }}
+          transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
+        ></motion.div>
 
-        <div className="max-w-4xl mx-auto px-6 space-y-8 relative z-10">
+        <motion.div
+          className="max-w-4xl mx-auto px-6 space-y-8 relative z-10"
+          initial={{ opacity: 0, y: 24 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-80px" }}
+          transition={{ duration: 0.6, ease: "easeOut" }}
+        >
           <h2 className="font-sans font-black text-white text-3xl sm:text-5xl tracking-tight leading-tight">
             Ready to Protect Your Capital &amp; Ensure Construction Excellence?
           </h2>
@@ -546,116 +655,131 @@ export default function ServicesPage() {
               <span>View Case Studies</span>
             </Link>
           </div>
-        </div>
+        </motion.div>
       </section>
 
       {/* 6. FULL SCOPE MODAL POPUP */}
-      {selectedService && (
-         <div className="fixed inset-0 z-40 bg-black/80 backdrop-blur-md animate-fade-in">
-    <div className="h-full flex items-center justify-center p-4 pt-24">
-      <div className="relative w-full max-w-2xl bg-[#0d1321] border border-warm-gold/40 rounded-3xl p-8 sm:p-10 space-y-6 max-h-[calc(100vh-7rem)] overflow-y-auto shadow-2xl">
-            {/* Close Button */}
-            <button
-              onClick={() => setSelectedService(null)}
-              className="cursor-pointer absolute top-6 right-6 p-2 rounded-full bg-white/5 text-[#94a3b8] hover:text-white hover:bg-white/10 transition-colors"
-            >
-              <X className="w-5 h-5" />
-            </button>
-
-            {/* Modal Header */}
-            <div className="space-y-2 border-b border-white/10 pb-6 pr-8">
-              <h3 className="font-sans font-black text-white text-2xl sm:text-3xl">
-                {selectedService.title}
-              </h3>
-              <p className="font-sans text-xs sm:text-sm text-[#94a3b8] italic">
-                {selectedService.tagline}
-              </p>
-            </div>
-
-            {/* Summary */}
-            <div className="space-y-3">
-              <h4 className="font-sans font-bold text-white text-sm uppercase tracking-wider text-warm-gold">
-                Service Overview
-              </h4>
-              <p className="text-sm text-[#b8c4d0] leading-relaxed">
-                {selectedService.summary}
-              </p>
-            </div>
-
-            {/* Key Impact Box */}
-            <div className="p-4 rounded-2xl bg-white/[0.03] border border-white/10 space-y-1">
-              <span className="text-xs font-mono font-bold text-warm-gold uppercase tracking-wider">
-                Key Impact
-              </span>
-              <p className="text-xs sm:text-sm font-semibold text-white">
-                {selectedService.keyOutcome}
-              </p>
-            </div>
-
-            {/* Scope Deliverables */}
-            <div className="space-y-3">
-              <h4 className="font-sans font-bold text-white text-sm uppercase tracking-wider text-warm-gold">
-                Key Scope Deliverables
-              </h4>
-              <ul className="space-y-2">
-                {selectedService.scopeDetails.map((detail, idx) => (
-                  <li key={idx} className="flex items-start space-x-3 text-xs sm:text-sm text-white">
-                    <CheckCircle2 className="w-4 h-4 text-warm-gold flex-shrink-0 mt-0.5" />
-                    <span>{detail}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-
-            {/* Sub-Services List */}
-            <div className="space-y-3 pt-2">
-              <h4 className="font-sans font-bold text-white text-sm uppercase tracking-wider text-warm-gold">
-                Specialized Modules
-              </h4>
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                {selectedService.subServices.map((sub, idx) => (
-                  <div key={idx} className="p-3.5 rounded-xl bg-navy-dark border border-white/5 space-y-1">
-                    <p className="font-bold text-xs text-white">{sub.name}</p>
-                    <p className="text-[11px] text-[#94a3b8]">{sub.desc}</p>
-                  </div>
-                ))}
-              </div>
-            </div>
-
-            {/* Sectors Served */}
-            <div className="space-y-2 pt-2 border-t border-white/10">
-              <span className="font-mono text-xs uppercase tracking-wider text-[#94a3b8]">Applicable Sectors:</span>
-              <div className="flex flex-wrap gap-2">
-                {selectedService.sectors.map((sec, idx) => (
-                  <span
-                    key={idx}
-                    className="text-xs bg-navy-dark border border-white/10 text-[#b8c4d0] px-2.5 py-1 rounded"
-                  >
-                    {sec}
-                  </span>
-                ))}
-              </div>
-            </div>
-
-            {/* Modal Footer CTA */}
-            <div className="pt-6 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between gap-4">
-              <div className="text-xs text-[#94a3b8]">
-                <span>Guaranteed independent oversight under UK / COREN benchmarks.</span>
-              </div>
-              <Link
-                to="/contact"
-                onClick={() => setSelectedService(null)}
-                className="w-full sm:w-auto inline-flex items-center justify-center space-x-2 bg-warm-gold hover:bg-warm-gold/90 text-[#0a0e17] font-sans font-bold text-xs px-6 py-3 rounded-xl transition-all"
+      <AnimatePresence>
+        {selectedService && (
+          <motion.div
+            className="fixed inset-0 z-40 bg-black/80 backdrop-blur-md"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.25, ease: "easeOut" }}
+            onClick={() => setSelectedService(null)}
+          >
+            <div className="h-full flex items-center justify-center p-4 pt-24">
+              <motion.div
+                className="relative w-full max-w-2xl bg-[#0d1321] border border-warm-gold/40 rounded-3xl p-8 sm:p-10 space-y-6 max-h-[calc(100vh-7rem)] overflow-y-auto shadow-2xl"
+                initial={{ opacity: 0, y: 24, scale: 0.97 }}
+                animate={{ opacity: 1, y: 0, scale: 1 }}
+                exit={{ opacity: 0, y: 16, scale: 0.97 }}
+                transition={{ duration: 0.3, ease: "easeOut" }}
+                onClick={(e) => e.stopPropagation()}
               >
-                <span>Inquire About This Service</span>
-                <ArrowRight className="w-3.5 h-3.5" />
-              </Link>
+                {/* Close Button */}
+                <button
+                  onClick={() => setSelectedService(null)}
+                  className="cursor-pointer absolute top-6 right-6 p-2 rounded-full bg-white/5 text-[#94a3b8] hover:text-white hover:bg-white/10 transition-colors"
+                >
+                  <X className="w-5 h-5" />
+                </button>
+
+                {/* Modal Header */}
+                <div className="space-y-2 border-b border-white/10 pb-6 pr-8">
+                  <h3 className="font-sans font-black text-white text-2xl sm:text-3xl">
+                    {selectedService.title}
+                  </h3>
+                  <p className="font-sans text-xs sm:text-sm text-[#94a3b8] italic">
+                    {selectedService.tagline}
+                  </p>
+                </div>
+
+                {/* Summary */}
+                <div className="space-y-3">
+                  <h4 className="font-sans font-bold text-white text-sm uppercase tracking-wider text-warm-gold">
+                    Service Overview
+                  </h4>
+                  <p className="text-sm text-[#b8c4d0] leading-relaxed">
+                    {selectedService.summary}
+                  </p>
+                </div>
+
+                {/* Key Impact Box */}
+                <div className="p-4 rounded-2xl bg-white/[0.03] border border-white/10 space-y-1">
+                  <span className="text-xs font-mono font-bold text-warm-gold uppercase tracking-wider">
+                    Key Impact
+                  </span>
+                  <p className="text-xs sm:text-sm font-semibold text-white">
+                    {selectedService.keyOutcome}
+                  </p>
+                </div>
+
+                {/* Scope Deliverables */}
+                <div className="space-y-3">
+                  <h4 className="font-sans font-bold text-white text-sm uppercase tracking-wider text-warm-gold">
+                    Key Scope Deliverables
+                  </h4>
+                  <ul className="space-y-2">
+                    {selectedService.scopeDetails.map((detail, idx) => (
+                      <li key={idx} className="flex items-start space-x-3 text-xs sm:text-sm text-white">
+                        <CheckCircle2 className="w-4 h-4 text-warm-gold flex-shrink-0 mt-0.5" />
+                        <span>{detail}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+
+                {/* Sub-Services List */}
+                <div className="space-y-3 pt-2">
+                  <h4 className="font-sans font-bold text-white text-sm uppercase tracking-wider text-warm-gold">
+                    Specialized Modules
+                  </h4>
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                    {selectedService.subServices.map((sub, idx) => (
+                      <div key={idx} className="p-3.5 rounded-xl bg-navy-dark border border-white/5 space-y-1">
+                        <p className="font-bold text-xs text-white">{sub.name}</p>
+                        <p className="text-[11px] text-[#94a3b8]">{sub.desc}</p>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+
+                {/* Sectors Served */}
+                <div className="space-y-2 pt-2 border-t border-white/10">
+                  <span className="font-mono text-xs uppercase tracking-wider text-[#94a3b8]">Applicable Sectors:</span>
+                  <div className="flex flex-wrap gap-2">
+                    {selectedService.sectors.map((sec, idx) => (
+                      <span
+                        key={idx}
+                        className="text-xs bg-navy-dark border border-white/10 text-[#b8c4d0] px-2.5 py-1 rounded"
+                      >
+                        {sec}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+
+                {/* Modal Footer CTA */}
+                <div className="pt-6 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between gap-4">
+                  <div className="text-xs text-[#94a3b8]">
+                    <span>Guaranteed independent oversight under UK / COREN benchmarks.</span>
+                  </div>
+                  <Link
+                    to="/contact"
+                    onClick={() => setSelectedService(null)}
+                    className="w-full sm:w-auto inline-flex items-center justify-center space-x-2 bg-warm-gold hover:bg-warm-gold/90 text-[#0a0e17] font-sans font-bold text-xs px-6 py-3 rounded-xl transition-all"
+                  >
+                    <span>Inquire About This Service</span>
+                    <ArrowRight className="w-3.5 h-3.5" />
+                  </Link>
+                </div>
+              </motion.div>
             </div>
-            </div>
-          </div>
-        </div>
-      )}
-  
+          </motion.div>
+        )}
+      </AnimatePresence>
 
     </div>
   );
