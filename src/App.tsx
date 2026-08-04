@@ -15,7 +15,6 @@ export default function App() {
       <ScrollToTop />
       <div className="flex min-h-screen flex-col">
         <Navbar />
-
         <main className="relative z-10 grow">
           <Routes>
             <Route path="/" element={<HomePage />} />
@@ -27,8 +26,6 @@ export default function App() {
             <Route path="*" element={<HomePage />} />
           </Routes>
         </main>
-
-        {/* Multi-Column Footer */}
         <Footer />
       </div>
     </Router>

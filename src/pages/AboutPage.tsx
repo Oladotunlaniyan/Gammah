@@ -80,7 +80,7 @@ export default function AboutPage() {
   ];
 
   return (
-    <div className="pt-16 md:pt-18 bg-navy-dark text-text-body font-sans space-y-0 h-screen">
+    <div className="pt-16 md:pt-18 bg-navy-dark text-text-body font-sans space-y-0">
       {/* ABOUT PAGE HEADER HERO */}
       <section className="relative w-full overflow-hidden bg-[#0d1321]">
         <div className="relative min-h-110 lg:min-h-130 w-full flex items-center pb-40 lg:pb-52 pt-16 md:pt-24">
@@ -328,16 +328,7 @@ export default function AboutPage() {
                       className="w-full h-full object-cover object-top"
                     />
                   </div>
-                  <div className="space-y-2">
-                    <div className="flex flex-wrap gap-2">
-                      <span className="inline-flex items-center space-x-1 px-2.5 py-0.5 rounded text-[10px] font-mono font-bold uppercase tracking-wider bg-warm-gold/10 text-warm-gold border border-warm-gold/30">
-                        <Award className="w-3 h-3 mr-1" />
-                        COREN Registered
-                      </span>
-                      <span className="inline-flex items-center space-x-1 px-2.5 py-0.5 rounded text-[10px] font-mono font-bold uppercase tracking-wider bg-white/5 text-[#b8c4d0] border border-white/10">
-                        MNSE Member
-                      </span>
-                    </div>
+                  <div className="space-y-1">
                     <h3 className="font-sans font-extrabold text-white text-2xl sm:text-3xl tracking-tight">
                       Engr. Gbenga Daniel Akinsipe
                     </h3>
