@@ -8,6 +8,8 @@ const fadeUp = {
   show: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } as const },
 };
 
+const MotionLink = motion(Link);
+
 const fadeIn = {
   hidden: { opacity: 0 },
   show: { opacity: 1, transition: { duration: 0.8, ease: "easeOut" } as const },
@@ -117,15 +119,15 @@ export default function AboutPage() {
                 We deliver independent project oversight backed by COREN engineering expertise, RICS standards, and an unwavering commitment to our clients' interests.
               </motion.p>
               <motion.div variants={fadeUp} className="pt-2">
-                <motion.a
+                <MotionLink
                   whileHover={{ x: 4 }}
                   whileTap={{ scale: 0.97 }}
-                  href="/services"
+                  to="/services"
                   className="inline-flex items-center space-x-2.5 bg-[#4a90d9] hover:bg-[#3a7bc9] text-white font-sans font-semibold text-sm sm:text-base px-8 py-4 rounded-none sm:rounded transition-all shadow-xl"
                 >
                   <span>Learn more</span>
                   <ArrowRight className="w-4 h-4" />
-                </motion.a>
+                </MotionLink>
               </motion.div>
             </motion.div>
           </div>
