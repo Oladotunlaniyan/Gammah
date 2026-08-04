@@ -120,7 +120,7 @@ export default function AboutPage() {
                 <motion.a
                   whileHover={{ x: 4 }}
                   whileTap={{ scale: 0.97 }}
-                  href="#about-mission"
+                  href="/services"
                   className="inline-flex items-center space-x-2.5 bg-[#4a90d9] hover:bg-[#3a7bc9] text-white font-sans font-semibold text-sm sm:text-base px-8 py-4 rounded-none sm:rounded transition-all shadow-xl"
                 >
                   <span>Learn more</span>
@@ -362,7 +362,7 @@ export default function AboutPage() {
                 </div>
                 <div className="flex items-center space-x-2">
                   <CheckCircle2 className="w-4 h-4 text-electric-teal" />
-                  <span>25+ Years Structural Practice</span>
+                  <span>5+ Years Structural Practice</span>
                 </div>
               </div>
             </motion.div>
@@ -375,9 +375,6 @@ export default function AboutPage() {
             >
               <div className="space-y-8">
                 <div className="space-y-4">
-                  <div className="inline-flex items-center space-x-2 bg-warm-gold/10 border border-warm-gold/30 px-3 py-1 rounded-full text-warm-gold text-xs font-mono font-bold uppercase tracking-widest">
-                    <span>Careers &amp; Network</span>
-                  </div>
                   <h3 className="font-sans font-black text-white text-2xl sm:text-3xl tracking-tight leading-tight">
                     Join Our Oversight Team
                   </h3>
@@ -399,6 +396,18 @@ export default function AboutPage() {
                     <CheckCircle2 className="w-4 h-4 text-warm-gold flex-shrink-0" />
                     <span>Zero Contractor Kickbacks Policy</span>
                   </li>
+                  <li className="flex items-center space-x-3 text-sm text-[#b8c4d0]">
+                    <CheckCircle2 className="w-4 h-4 text-warm-gold flex-shrink-0" />
+                    <span>Flexible work environment</span>
+                  </li>
+                  <li className="flex items-center space-x-3 text-sm text-[#b8c4d0]">
+                    <CheckCircle2 className="w-4 h-4 text-warm-gold flex-shrink-0" />
+                    <span>Welcoming and inclusive culture</span>
+                  </li>
+                  <li className="flex items-center space-x-3 text-sm text-[#b8c4d0]">
+                    <CheckCircle2 className="w-4 h-4 text-warm-gold flex-shrink-0" />
+                    <span>Bonus structure</span>
+                  </li>
                 </ul>
               </div>
 
@@ -413,7 +422,7 @@ export default function AboutPage() {
                   </Link>
                 </motion.div>
                 <p className="text-center text-xs text-[#94a3b8]">
-                  Reach out with your COREN / RICS credentials to explore opportunities.
+                  Reach out with your credentials to explore opportunities.
                 </p>
               </div>
             </motion.div>

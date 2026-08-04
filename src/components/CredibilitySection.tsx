@@ -110,10 +110,6 @@ export default function CredibilitySection() {
 
         {/* SECTION HEADER */}
         <div className="text-center max-w-3xl mx-auto space-y-4">
-          <div className="inline-flex items-center space-x-2 bg-warm-gold/10 border border-warm-gold/30 px-3.5 py-1 rounded-full text-warm-gold text-xs font-mono font-bold uppercase tracking-widest">
-            <ShieldCheck className="w-4 h-4 text-warm-gold" />
-            <span>Fiduciary Integrity & Compliance</span>
-          </div>
           <h2 className="font-sans font-black text-white text-3xl sm:text-4xl lg:text-5xl tracking-tight leading-tight">
             Why Institutional & Diaspora Investors Trust Gamah Projects
           </h2>
