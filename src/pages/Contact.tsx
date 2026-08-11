@@ -35,10 +35,6 @@ export default function ContactPage() {
       {/* PAGE HERO */}
       <section className="relative py-16 md:py-24 bg-gradient-to-b from-[#0d1321] via-navy-dark to-[#0a0e17] border-b border-white/10">
         <div className="max-w-7xl mx-auto px-6 md:px-12 text-center max-w-4xl space-y-6">
-          <div className="inline-flex items-center space-x-2 bg-warm-gold/10 border border-warm-gold/30 px-3 py-1 rounded-full text-warm-gold text-xs font-mono font-bold uppercase tracking-widest">
-            <MessageSquare className="w-3.5 h-3.5" />
-            <span>Advisory Engagement</span>
-          </div>
           <h1 className="font-sans font-black text-white text-4xl sm:text-5xl lg:text-6xl tracking-tight leading-tight">
             Connect with Our Project Advisory Team
           </h1>

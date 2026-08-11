@@ -194,15 +194,6 @@ export default function ServicesPage() {
           <motion.div
             variants={fadeUp}
             transition={{ duration: 0.6, ease: "easeOut" }}
-            className="flex items-center space-x-2 text-xs font-mono font-bold text-warm-gold uppercase tracking-widest bg-warm-gold/10 border border-warm-gold/30 px-3.5 py-1.5 rounded-full w-fit"
-          >
-            <Compass className="w-3.5 h-3.5 mr-1" />
-            <span>What We Do &bull; Services</span>
-          </motion.div>
-
-          <motion.div
-            variants={fadeUp}
-            transition={{ duration: 0.6, ease: "easeOut" }}
             className="max-w-3xl space-y-4"
           >
             <h1 className="font-sans font-black text-white text-4xl sm:text-5xl lg:text-6xl tracking-tight leading-[1.1]">
