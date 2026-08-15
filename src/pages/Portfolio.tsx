@@ -442,6 +442,7 @@ export default function PortfolioPage() {
       </section>
 
       {/* 5. WHY WORK WITH GAMAH PROJECTS SECTION */}
+      {/* 5. WHY WORK WITH GAMAH PROJECTS SECTION */}
       <section className="py-20 bg-[#0d1321] border-y border-white/10">
         <div className="max-w-7xl mx-auto px-6 md:px-12 space-y-12">
 
@@ -469,10 +470,22 @@ export default function PortfolioPage() {
             className="grid grid-cols-1 md:grid-cols-3 gap-8"
           >
             {[
-              { Icon: Building2, color: "amber", title: "Turnkey Engineering", desc: "Complete ground-up general construction management, eliminating supplier conflicts and ensuring COREN structural compliance." },
-              { Icon: Wind, color: "cyan", title: "Commercial Ventilation", desc: "Precision HVAC ductwork engineering, thermal insulation testing, and indoor air quality auditing for commercial facilities." },
-              { Icon: Recycle, color: "emerald", title: "Recycled Metal Sourcing", desc: "International supply chain governance for scrap metal procurement, circular economy traceability, and cross-border freight logistics." }
-            ].map(({ Icon, color, title, desc }) => (
+              {
+                Icon: ShieldCheck,
+                title: "Independent Advice. Unbiased Decisions.",
+                desc: "Gamah operates solely on the client's behalf, unlike firms that may have an interest in design, construction or contracting. With our independent project management strategy, you'll get objective advice, transparent reporting, and professional oversight without the conflict of interest, to help you make better decisions."
+              },
+              {
+                Icon: Wrench,
+                title: "Technical Skills and Beyond Project Management Skills.",
+                desc: "Gamah integrates project management with practical technical management, such as design review and buildability assessments, quality assurance, inspection, testing, cost and programme monitoring, risk management and contract administration. Not only do we monitor progress, we know what is going on the project and help ensure that it is delivered to the required standard."
+              },
+              {
+                Icon: Building2,
+                title: "International Standards, Local Understanding.",
+                desc: "We introduce international project management experience and practices from high-end commercial construction in the UK to Nigeria and Africa. Gamah leverages state-of-the-art digital project controls, reporting frameworks, and tried and tested governance processes to provide clients with the systems, transparency, and accountability they need to safeguard investment and ensure projects are completed with greater confidence."
+              }
+            ].map(({ Icon, title, desc }) => (
               <motion.div
                 key={title}
                 variants={fadeUp}
@@ -495,7 +508,6 @@ export default function PortfolioPage() {
 
         </div>
       </section>
-
       {/* 6. REQUEST PROPOSAL SECTION */}
       <section className="py-20 bg-[#0a0e17] text-center border-b border-white/10 relative overflow-hidden">
         <motion.div
