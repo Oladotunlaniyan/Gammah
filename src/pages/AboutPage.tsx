@@ -346,7 +346,7 @@ export default function AboutPage() {
                     With over 5 years of structural engineering practice across UK commercial governance and Nigerian capital projects, Engr. Akinsipe founded Gamah Projects to give diaspora investors and developers an unvarnished engineering and project management shield on the ground.
                   </p>
                   <p>
-                    He built Gamah Projects on a non-negotiable principle: <strong className="text-white font-semibold">zero financial ties to contractors, builders, or material suppliers</strong>. His loyalty remains entirely with the client.
+                    He built Gamah Projects on a non-negotiable principle: <strong className="text-white font-semibold">zero financial ties to contractors, builders or material suppliers </strong>. His loyalty remains entirely with the client.
                   </p>
                 </div>
 
@@ -382,7 +382,7 @@ export default function AboutPage() {
                     Join Our Oversight Team
                   </h3>
                   <p className="font-sans text-sm sm:text-base text-[#94a3b8] leading-relaxed">
-                    We are always seeking ethical, uncompromising civil engineers, RICS-certified quantity surveyors, and independent project auditors across Lagos, Abuja, and Port Harcourt who refuse to grade their own homework.
+                    We are always seeking ethical, uncompromising project management professionals who refuse to grade their own homework. From project managers and consultants to independent auditors and specialists, we are looking for people committed to transparency, accountability, and delivering every project to the highest standard.
                   </p>
                 </div>
 
