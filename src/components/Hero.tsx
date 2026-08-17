@@ -196,7 +196,7 @@ export default function Hero() {
             transition={{ delay: 0.45, duration: 0.8 }}
             className="font-sans text-base md:text-lg text-text-body leading-relaxed max-w-145"
           >
-            We combine international construction expertise with deep local market knowledge to protect your investment, manage risk, and deliver excellence from feasibility to handover.
+            We combine international project expertise with deep local market knowledge to protect your investment, manage risk, and deliver excellence from feasibility to handover.
           </motion.p>
 
           <motion.div

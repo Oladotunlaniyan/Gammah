@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import { motion } from "motion/react";
 import { Shield, Award, MapPin, ArrowRight, Building2, Globe2, HardHatIcon, Ruler, Calculator, Quote, UserPlus, CheckCircle2 } from "lucide-react";
 import heroConstructionBg from "../assets/images/photo_2026-07-21_18-39-46.jpg";
+import founderPhoto from "../assets/images/photo_2026-08-17_14-28-46.jpg";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 32 },
@@ -223,7 +224,7 @@ export default function AboutPage() {
                 variants={fadeUp}
                 className="font-sans text-sm sm:text-base text-[#b8c4d0] leading-relaxed"
               >
-                Gamah Projects is an independent construction project management and fiduciary advisory agency passionate about protecting capital and enforcing structural discipline. We specialize in civil engineering oversight, quantity surveying, and contractor accountability, helping diaspora families, institutional developers, and businesses build safely across West Africa.
+                Gamah Projects is an independent project management and fiduciary advisory agency passionate about protecting capital and enforcing structural discipline. We specialize in civil engineering oversight, quantity surveying, and contractor accountability, helping diaspora families, institutional developers, and businesses build safely across West Africa.
               </motion.p>
               <motion.p
                 variants={fadeUp}
@@ -325,7 +326,7 @@ export default function AboutPage() {
                 <div className="flex flex-col sm:flex-row items-start sm:items-center gap-6">
                   <div className="relative w-24 h-24 sm:w-28 sm:h-28 rounded-2xl overflow-hidden border-2 border-warm-gold/40 flex-shrink-0 shadow-lg">
                     <img
-                      // src={founderPhoto}
+                      src={founderPhoto}
                       alt="Engr. Gbenga Daniel Akinsipe - Founder & Lead Civil Engineer"
                       className="w-full h-full object-cover object-top"
                     />
@@ -342,10 +343,10 @@ export default function AboutPage() {
 
                 <div className="space-y-4 text-sm sm:text-base text-[#94a3b8] leading-relaxed">
                   <p>
-                    With over two decades of structural engineering practice across UK commercial governance and Nigerian capital projects, Engr. Akinsipe founded Gamah Projects to give diaspora investors and developers an unvarnished engineering shield on the ground.
+                    With over 5 years of structural engineering practice across UK commercial governance and Nigerian capital projects, Engr. Akinsipe founded Gamah Projects to give diaspora investors and developers an unvarnished engineering and project management shield on the ground.
                   </p>
                   <p>
-                    He built Gamah Projects on a non-negotiable principle: <strong className="text-white font-semibold">zero financial ties to contractors, builders, or material suppliers</strong>. His loyalty remains entirely with the client—ensuring every bag of cement, reinforcement bar, and concrete pour meets international safety specifications.
+                    He built Gamah Projects on a non-negotiable principle: <strong className="text-white font-semibold">zero financial ties to contractors, builders, or material suppliers</strong>. His loyalty remains entirely with the client.
                   </p>
                 </div>
 

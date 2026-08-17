@@ -29,9 +29,9 @@ export default function ServicesSection() {
     },
     {
       id: "003",
-      title: "Construction",
+      title: "Project Monitoring & Control",
       label: "Quality & Cost Governance",
-      description: "Construction monitoring • Technical oversight (Compliance, specifications, inspections, testing, and technical review) • Quality assurance • Contract administration • Programme and schedule monitoring • Cost and budget monitoring • Progress reporting • Risk management • Stakeholder coordination",
+      description: "Project Monitoring • Technical oversight (Compliance, specifications, inspections, testing, and technical review) • Quality assurance • Contract administration • Programme and schedule monitoring • Cost and budget monitoring • Progress reporting • Risk management • Stakeholder coordination",
       metricLabel: "Capital Protected",
       metricValue: "₦50B+",
       metricChange: "Cost Overruns Prevented ↓100%",
@@ -66,11 +66,11 @@ export default function ServicesSection() {
         </div>
 
         {/* MAIN SPLIT-SCREEN LAYOUT */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-stretch">
           
           {/* LEFT COLUMN: Visual Media Card with Floating Stat Card Overlay */}
           <div className="lg:col-span-6 relative">
-            <div className="relative h-96 sm:h-170 w-full rounded-lg overflow-hidden border border-white/10 shadow-[0_20px_50px_rgba(0,0,0,0.6)] bg-[#0d1321] group">
+            <div className="relative h-96 lg:h-full w-full rounded-lg overflow-hidden border border-white/10 shadow-[0_20px_50px_rgba(0,0,0,0.6)] bg-[#0d1321] group">
               <img
                 src={dashboardBg}
                 alt="Digital construction management dashboard background"

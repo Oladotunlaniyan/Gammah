@@ -211,10 +211,11 @@ export default function ServicesPage() {
             className="pt-4 flex flex-wrap items-center gap-3 text-xs font-mono text-[#94a3b8]"
           >
             <span className="text-white font-semibold uppercase tracking-wider">Key Sectors:</span>
-            <span className="bg-white/5 border border-white/10 px-3 py-1 rounded-full">Real Estate &amp; Estates</span>
+            <span className="bg-white/5 border border-white/10 px-3 py-1 rounded-full">Construction &amp; Projects</span>
             <span className="bg-white/5 border border-white/10 px-3 py-1 rounded-full">Infrastructure &amp; Energy</span>
             <span className="bg-white/5 border border-white/10 px-3 py-1 rounded-full">Institutional &amp; Diaspora Capital</span>
-            <span className="bg-white/5 border border-white/10 px-3 py-1 rounded-full">Commercial Developments</span>
+            <span className="bg-white/5 border border-white/10 px-3 py-1 rounded-full">Asset recovery</span>
+             <span className="bg-white/5 border border-white/10 px-3 py-1 rounded-full">Industrial Projects</span>
           </motion.div>
         </motion.div>
       </section>
