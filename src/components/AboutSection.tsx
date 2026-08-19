@@ -62,7 +62,7 @@ export default function AboutSection() {
       }}
       transition={{ duration: 0.7, ease: "easeOut" }}
     >
-      Independent project consultancy for Africa's built environment.
+      Independent project consultancy for world-class developments.
     </motion.h2>
   </motion.div>
         {/* MAIN ABOUT US GRID LAYOUT (MATCHING REFERENCE DESIGN) */}
@@ -87,11 +87,8 @@ export default function AboutSection() {
 
               {/* Bottom Badge overlay */}
               <div className="absolute bottom-6 left-6 right-6 p-5 rounded-xl bg-navy-dark/85 backdrop-blur-md border border-white/10 shadow-lg">
-                <p className="font-sans font-bold text-white text-base">
-                  Gamah Projects Consulting Ltd
-                </p>
                 <p className="font-sans text-xs text-warm-gold mt-1">
-                  Bridging International Construction Rigour & African Market Insight
+                  Construction project management and consultancy in progress. 
                 </p>
               </div>
             </div>
@@ -139,7 +136,7 @@ export default function AboutSection() {
                 Delivering Unbiased Project Management Consultancy
               </h3>
               <p className="font-sans text-sm md:text-base text-text-body leading-relaxed md:leading-loose w-full text-left md:text-justify">
-  While project management services exist within architecture, engineering, quantity surveying, and contracting firms, they are often delivered in the interest of those professional disciplines. Gamah Projects Consulting Ltd fills this gap by providing integrated project management consultancy services that coordinate all project stakeholders through proven project management methodologies, digital project controls, quality assurance processes, and governance frameworks used on world-class developments to help clients deliver better projects.
+ While project management services exist within other professional services and contracting firms. Gamah Projects Consulting Ltd provides integrated project management consultancy services that coordinate all project stakeholders through proven project management methodologies, digital project controls, quality assurance processes, and governance frameworks used on world-class developments to help clients deliver better projects.
 </p>
 
               <div className="pt-2">

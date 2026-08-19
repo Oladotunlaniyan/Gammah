@@ -3,6 +3,7 @@ import { motion } from "motion/react";
 import { Shield, Award, MapPin, ArrowRight, Building2, Globe2, HardHatIcon, Ruler, Calculator, Quote, UserPlus, CheckCircle2 } from "lucide-react";
 import heroConstructionBg from "../assets/images/photo_2026-07-21_18-39-46.jpg";
 import founderPhoto from "../assets/images/photo_2026-08-17_14-28-46.jpg";
+import HomeCta from "../components/HomeCta";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 32 },
@@ -50,37 +51,37 @@ export default function AboutPage() {
   ];
 
   const storyBlocks = [
-    {
-      number: "01",
-      title: "The Problem We Saw",
-      text: "For years, diaspora families and overseas investors faced the same heartbreak: sending hard-earned savings home to build in Nigeria, only to be met with vague updates, inflated invoices, compromised concrete, and contractors who grade their own homework. When you are thousands of miles away in London, Texas, or Dubai, you cannot physically inspect rebar or verify actual street prices.",
-    },
-    {
-      number: "02",
-      title: "Why We Exist",
-      text: "We built Gamah Projects for one simple reason: to be your honest eyes, ears, and engineering shield on the ground. We don't construct buildings and we never take a penny from contractors. Our only job is telling you the truth—testing materials in independent laboratories and ensuring your money is protected every step of the way.",
-    },
-    {
-      number: "03",
-      title: "Zero Contractor Conflict",
-      text: "In an industry where many supervisors also sell materials or take commissions from builders, we drew a hard line. We never sell cement, hire laborers, or hold construction contracts. Because we have zero financial stake in who builds your project, our advice and audits remain 100% unbiased and loyal to you.",
-    },
-    {
-      number: "04",
-      title: "Truth Over Comfort",
-      text: "We believe in catching structural issues early rather than hiding them. When a concrete batch fails a compressive strength test or reinforcement bars fall short of specification, we stop work and report it immediately—long before defects get buried under plaster and paint.",
-    },
-    {
-      number: "05",
-      title: "Escrow & Client Protection",
-      text: "We tie your hard-earned capital to verified physical progress. Every payment recommendation is backed by date-stamped photographs, independent laboratory test certificates, and RICS-compliant quantity surveyor valuations, so you never pay for promises—only results.",
-    },
-    {
-      number: "06",
-      title: "Earning Permanent Trust",
-      text: "With every verified build, our reputation grew. From individual diaspora homes in Lagos and Abuja to multi-billion Naira institutional developments, clients seek out Gamah Projects for our unwavering honesty, engineering discipline, and commitment to delivering peace of mind.",
-    },
-  ];
+  {
+    number: "01",
+    title: "The Problem We Saw",
+    text: "Across Nigeria and Africa, projects routinely suffer cost overruns, delays, and quality gaps due to weak governance and limited independent oversight. Without professional project management, even well-funded developments fall short of expectations.",
+  },
+  {
+    number: "02",
+    title: "Why We Exist",
+    text: "We deliver independent project advisory, engineering consultancy, and project management that puts client interests first. By combining local market knowledge with international best practices, we improve transparency, reduce risk, and deliver lasting value.",
+  },
+  {
+    number: "03",
+    title: "Zero Conflict of Interest",
+    text: "We do not undertake construction work, employ subcontractors, or hold supplier contracts. Unlike traditional firms that also build or design, we act solely in your interest, so our advice is always unbiased.",
+  },
+  {
+    number: "04",
+    title: "Quality Without Compromise",
+    text: "We enforce rigorous quality assurance, compliance verification, and proactive risk management throughout the project lifecycle. Issues are flagged early and addressed immediately before they escalate.",
+  },
+  {
+    number: "05",
+    title: "Capital Protection",
+    text: "We structure payments around verified progress. With mobilisation fees, milestone-based disbursements, and monthly advance invoicing, your capital is protected and only released when work is confirmed.",
+  },
+  {
+    number: "06",
+    title: "Trust Built on Results",
+    text: "From private developers and corporate clients to institutional investors, we build long-term relationships through transparent reporting, professional discipline, and a proven commitment to successful project delivery.",
+  },
+];
 
   return (
     <div className="pt-16 md:pt-18 bg-navy-dark text-text-body font-sans space-y-0">
@@ -117,7 +118,7 @@ export default function AboutPage() {
                 variants={fadeUp}
                 className="font-sans text-sm sm:text-base text-white/90 leading-relaxed max-w-xl"
               >
-                We deliver independent project oversight backed by COREN engineering expertise, RICS standards, and an unwavering commitment to our clients' interests.
+                We deliver independent project services and an unwavering commitment to our clients' interests.
               </motion.p>
               <motion.div variants={fadeUp} className="pt-2">
                 <MotionLink
@@ -305,7 +306,7 @@ export default function AboutPage() {
               variants={fadeUp}
               className="font-sans text-sm sm:text-base md:text-lg text-[#94a3b8] leading-relaxed"
             >
-              We believe ethical construction oversight starts at the top, with zero contractor conflict of interest and an unyielding commitment to structural discipline.
+              We believe ethical  oversight starts at the top, with zero contractor conflict of interest and an unyielding commitment to structural discipline.
             </motion.p>
           </motion.div>
 
@@ -342,19 +343,12 @@ export default function AboutPage() {
                 </div>
 
                 <div className="space-y-4 text-sm sm:text-base text-[#94a3b8] leading-relaxed">
-                  <p>
-                    With over 5 years of structural engineering practice across UK commercial governance and Nigerian capital projects, Engr. Akinsipe founded Gamah Projects to give diaspora investors and developers an unvarnished engineering and project management shield on the ground.
-                  </p>
-                  <p>
-                    He built Gamah Projects on a non-negotiable principle: <strong className="text-white font-semibold">zero financial ties to contractors, builders or material suppliers </strong>. His loyalty remains entirely with the client.
-                  </p>
-                </div>
-
-                <div className="p-5 rounded-2xl bg-white/[0.03] border border-white/5 flex items-start space-x-4">
-                  <Quote className="w-6 h-6 text-warm-gold flex-shrink-0 mt-0.5 opacity-80" />
-                  <p className="text-xs sm:text-sm text-white italic leading-relaxed">
-                    &ldquo;When you don&apos;t sell the materials or take a cut from the contractor, you can tell the absolute truth about how much cement was really used.&rdquo;
-                  </p>
+                 <p>
+  Daniel Akinsipe founded Gamah Projects to deliver independent project advisory and management services across Africa. A COREN registered Civil Engineer and Glasgow Caledonian University graduate, he brings international project delivery expertise to clients seeking transparent, expert oversight.
+</p>
+<p>
+  The firm operates on one principle: <strong className="text-white font-semibold">we do not undertake execution work, employ subcontractors, or hold supplier contracts</strong>. Our loyalty is entirely to the client.
+</p>
                 </div>
               </div>
 
@@ -382,36 +376,9 @@ export default function AboutPage() {
                     Join Our Oversight Team
                   </h3>
                   <p className="font-sans text-sm sm:text-base text-[#94a3b8] leading-relaxed">
-                    We are always seeking ethical, uncompromising project management professionals who refuse to grade their own homework. From project managers and consultants to independent auditors and specialists, we are looking for people committed to transparency, accountability, and delivering every project to the highest standard.
+                    We are always seeking ethical, uncompromising project management professionals. From project managers and consultants to independent auditors and specialists, we are looking for people committed to transparency, accountability, and delivering every project to the highest standard.
                   </p>
                 </div>
-
-                <ul className="space-y-3 pt-2 border-t border-white/10">
-                  <li className="flex items-center space-x-3 text-sm text-[#b8c4d0]">
-                    <CheckCircle2 className="w-4 h-4 text-warm-gold flex-shrink-0" />
-                    <span>100% Independent Client Fiduciary Roles</span>
-                  </li>
-                  <li className="flex items-center space-x-3 text-sm text-[#b8c4d0]">
-                    <CheckCircle2 className="w-4 h-4 text-warm-gold flex-shrink-0" />
-                    <span>Rigorous Field &amp; Laboratory Testing Standards</span>
-                  </li>
-                  <li className="flex items-center space-x-3 text-sm text-[#b8c4d0]">
-                    <CheckCircle2 className="w-4 h-4 text-warm-gold flex-shrink-0" />
-                    <span>Zero Contractor Kickbacks Policy</span>
-                  </li>
-                  <li className="flex items-center space-x-3 text-sm text-[#b8c4d0]">
-                    <CheckCircle2 className="w-4 h-4 text-warm-gold flex-shrink-0" />
-                    <span>Flexible work environment</span>
-                  </li>
-                  <li className="flex items-center space-x-3 text-sm text-[#b8c4d0]">
-                    <CheckCircle2 className="w-4 h-4 text-warm-gold flex-shrink-0" />
-                    <span>Welcoming and inclusive culture</span>
-                  </li>
-                  <li className="flex items-center space-x-3 text-sm text-[#b8c4d0]">
-                    <CheckCircle2 className="w-4 h-4 text-warm-gold flex-shrink-0" />
-                    <span>Bonus structure</span>
-                  </li>
-                </ul>
               </div>
 
               <div className="pt-8 mt-8 border-t border-white/10 space-y-3">
@@ -434,36 +401,7 @@ export default function AboutPage() {
       </section>
 
       {/* CALL TO ACTION */}
-      <section className="py-20 bg-navy-dark text-center border-t border-white/10">
-        <motion.div
-          variants={staggerContainer}
-          initial="hidden"
-          whileInView="show"
-          viewport={viewportOnce}
-          className="max-w-4xl mx-auto px-6 space-y-6"
-        >
-          <motion.h2
-            variants={fadeUp}
-            className="font-sans font-extrabold text-white text-3xl sm:text-4xl"
-          >
-            Partner with an Independent PMC
-          </motion.h2>
-          <motion.p variants={fadeUp} className="font-sans text-text-body text-sm sm:text-base">
-            Reach out to our advisory team today to discuss your project scale, feasibility requirements, or on-site risk audit needs.
-          </motion.p>
-          <motion.div variants={fadeUp}>
-            <motion.div whileHover={{ scale: 1.04 }} whileTap={{ scale: 0.97 }} className="inline-block">
-              <Link
-                to="/contact"
-                className="inline-flex items-center space-x-2 bg-warm-gold hover:bg-warm-gold/90 text-navy-dark font-sans font-bold text-sm px-8 py-4 rounded-full transition-all shadow-xl"
-              >
-                <span>Contact Advisory Team</span>
-                <ArrowRight className="w-4 h-4" />
-              </Link>
-            </motion.div>
-          </motion.div>
-        </motion.div>
-      </section>
+      <HomeCta />
     </div>
   );
 }

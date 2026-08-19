@@ -12,9 +12,9 @@ import ContactPage from "./pages/Contact";
 export default function App() {
   return ( 
     <Router>
-      <ScrollToTop />
       <div className="flex min-h-screen flex-col">
         <Navbar />
+        <ScrollToTop />
         <main className="relative z-10 grow">
           <Routes>
             <Route path="/" element={<HomePage />} />

@@ -53,36 +53,6 @@ export default function CredibilitySection() {
     },
   ];
 
-  const testimonials = [
-    {
-      quote:
-        "Developing an 18-storey high-rise from London used to be nerve-wracking. Gamah Projects provided live webcam feeds, weekly drone reports, and verified every single contractor invoice. They saved us over ₦2.1 Billion in inflated variation claims.",
-      author: "Dr. Babatunde Adegoke",
-      role: "Managing Director, Diaspora Capital Investment Group",
-      location: "London, UK & Lagos, NG",
-      project: "Ikoyi Luxury Residential Towers",
-      rating: 5,
-    },
-    {
-      quote:
-        "Gamah Projects operates as our indispensable fiduciary shield in West Africa. Their pre-construction BOQ audit identified structural redundancy and re-negotiated unit prices, delivering 14% bottom-line savings before ground was even broken.",
-      author: "Eleanor Vance-Smyth",
-      role: "Head of Infrastructure Risk, Emerging Markets Capital",
-      location: "City of London, United Kingdom",
-      project: "Abuja Tier-3 Data Center & Tech Hub",
-      rating: 5,
-    },
-    {
-      quote:
-        "As an SME commercial developer in Lagos, we needed an independent partner to keep our main contractor accountable. Gamah's site engineers strictly enforced COREN material specifications with zero tolerance for sub-standard concrete.",
-      author: "Arc. Folake Olanrewaju",
-      role: "Chief Operating Officer, Zenith Commercial Properties",
-      location: "Lagos, Nigeria",
-      project: "Lekki Coast Mixed-Use Mall",
-      rating: 5,
-    },
-  ];
-
   const trustGuarantees = [
     "Zero Contractor Conflict of Interest (We Never Construct or Subcontract)",
     "Independent Material Tensile & Cube Strength Laboratory Testing",
@@ -94,7 +64,7 @@ export default function CredibilitySection() {
 
   const cardVariants = {
     hidden: { opacity: 0, y: 28 },
-    visible: (i) => ({
+    visible: (i: number) => ({
       opacity: 1,
       y: 0,
       transition: { duration: 0.55, delay: i * 0.12, ease: [0.22, 1, 0.36, 1] } as const,
@@ -113,9 +83,6 @@ export default function CredibilitySection() {
           <h2 className="font-sans font-black text-white text-3xl sm:text-4xl lg:text-5xl tracking-tight leading-tight">
             Why Institutional & Diaspora Investors Trust Gamah Projects
           </h2>
-          <p className="font-sans text-sm md:text-base text-text-body leading-relaxed">
-            Unbiased client representation backed by official engineering accreditation bodies, international contract frameworks, and unyielding financial transparency.
-          </p>
         </div>
 
         {/* ACCREDITATIONS — CERTIFICATE-STYLE CARDS */}
@@ -182,99 +149,6 @@ export default function CredibilitySection() {
             })}
           </div>
         </div>
-
-        {/* TRUST GUARANTEES & FIDUCIARY CHARTER BOX */}
-  <motion.div
-          initial={{ opacity: 0, y: 24 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.3 }}
-          transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
-          className="p-8 md:p-10 rounded-3xl bg-gradient-to-r from-navy-dark via-[#0d1321] to-navy-dark border border-warm-gold/30 shadow-2xl relative overflow-hidden"
-        >
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
- 
-            <div className="lg:col-span-5 space-y-4">
-              <span className="font-mono text-xs font-bold text-warm-gold uppercase tracking-widest block">
-                FIDUCIARY CHARTER & GUARANTEE
-              </span>
-              <h3 className="font-sans font-extrabold text-white text-2xl sm:text-3xl leading-snug">
-                100% Unbiased Client Representation
-              </h3>
-              <p className="text-xs md:text-sm text-text-body leading-relaxed">
-                Because Gamah Projects is an independent consultancy and does not undertake construction contracts, we hold zero financial interest in contractor markups or variation claims. Our sole allegiance is protecting your capital and enforcing quality standards.
-              </p>
-              <div className="pt-2 flex items-center space-x-4 text-xs font-mono text-electric-teal">
-                <span className="flex items-center space-x-1.5">
-                  <Lock className="w-4 h-4 text-[#4a90d9]" />
-                  <span>Escrow Safe</span>
-                </span>
-                <span>•</span>
-                <span className="flex items-center space-x-1.5">
-                  <Building2 className="w-4 h-4 text-[#4a90d9]" />
-                  <span>COREN Certified</span>
-                </span>
-              </div>
-            </div>
- 
-            <div className="lg:col-span-7 grid grid-cols-1 sm:grid-cols-2 gap-3.5">
-              {trustGuarantees.map((guarantee, gIdx) => (
-                <div
-                  key={gIdx}
-                  className="p-3.5 rounded-xl bg-white/[0.03] border border-white/5 flex items-start space-x-3"
-                >
-                  <CheckCircle2 className="w-4 h-4 text-warm-gold flex-shrink-0 mt-0.5" />
-                  <span className="text-xs text-white/90 font-sans leading-snug">
-                    {guarantee}
-                  </span>
-                </div>
-              ))}
-            </div>
- 
-          </div>
-        </motion.div>
-
-        {/* CLIENT & INVESTOR TESTIMONIAL CARDS */}
-       <div className="space-y-8">
-          <div className="text-center space-y-2">
-            <span className="font-sans font-bold text-xs tracking-widest text-warm-gold uppercase">
-              CLIENT TESTIMONIALS & CASE VERDICT
-            </span>
-            <h3 className="font-sans font-extrabold text-white text-2xl sm:text-3xl">
-              What Our Investors & Partners Say
-            </h3>
-          </div>
- 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {testimonials.map((t, idx) => (
-              <motion.div
-                key={idx}
-                custom={idx}
-                variants={cardVariants}
-                initial="hidden"
-                whileInView="visible"
-                viewport={{ once: true, amount: 0.3 }}
-                className="p-8 rounded-2xl bg-white/[0.02] border border-white/10 hover:border-warm-gold/40 transition-all duration-300 flex flex-col justify-between space-y-6 relative group"
-              >
-                <div className="space-y-4">
-                  <Quote className="w-8 h-8 text-warm-gold/30 group-hover:text-warm-gold/60 transition-colors" />
-                  <p className="font-sans text-xs sm:text-sm text-[#b8c4d0] leading-relaxed italic">
-                    "{t.quote}"
-                  </p>
-                </div>
- 
-                <div className="pt-4 border-t border-white/5 space-y-1">
-                  <p className="font-sans font-bold text-sm text-white">{t.author}</p>
-                  <p className="font-sans text-xs text-warm-gold">{t.role}</p>
-                  <div className="flex items-center justify-between pt-2 text-[10px] font-mono text-[#b8c4d0]/60">
-                    <span>{t.location}</span>
-                    <span className="text-electric-teal font-bold">{t.project}</span>
-                  </div>
-                </div>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-
       </div>
     </section>
   );

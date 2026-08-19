@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { motion, AnimatePresence } from "motion/react";
 import PartnersStrip from "../components/partnerStrip";
 import Constructionthumb from "../assets/images/photo_2026-07-22_12-04-05.jpg";
+import HomeCta from "../components/HomeCta";
 import {
   Building2,
   Wind,
@@ -509,62 +510,7 @@ export default function PortfolioPage() {
         </div>
       </section>
       {/* 6. REQUEST PROPOSAL SECTION */}
-      <section className="py-20 bg-[#0a0e17] text-center border-b border-white/10 relative overflow-hidden">
-        <motion.div
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, amount: 0.4 }}
-          variants={staggerContainer}
-          className="max-w-4xl mx-auto px-6 space-y-8 relative z-10"
-        >
-          <motion.span
-            variants={fadeUp}
-            transition={{ duration: 0.5 }}
-            className="inline-block font-mono text-xs font-bold text-warm-gold uppercase tracking-widest bg-warm-gold/10 px-3.5 py-1.5 rounded-full border border-warm-gold/30"
-          >
-            Request Proposal
-          </motion.span>
-          <motion.h2
-            variants={fadeUp}
-            transition={{ duration: 0.6 }}
-            className="font-sans font-black text-white text-3xl sm:text-5xl tracking-tight leading-tight"
-          >
-            Have a Project Requiring Advisory or Turnkey Execution?
-          </motion.h2>
-          <motion.p
-            variants={fadeUp}
-            transition={{ duration: 0.6 }}
-            className="font-sans text-[#94a3b8] text-base sm:text-lg max-w-2xl mx-auto leading-relaxed"
-          >
-            Speak to our senior engineering and supply chain consultants in Lagos or London to review your project scope or tender requirements.
-          </motion.p>
-
-          <motion.div
-            variants={fadeUp}
-            transition={{ duration: 0.6 }}
-            className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-2"
-          >
-            <motion.button
-              whileHover={{ scale: 1.03 }}
-              whileTap={{ scale: 0.97 }}
-              onClick={() => setIsEstimateModalOpen(true)}
-              className="w-full sm:w-auto inline-flex items-center justify-center space-x-2 bg-warm-gold hover:bg-warm-gold/90 text-[#0a0e17] font-sans font-bold text-sm px-8 py-4 rounded-xl transition-colors shadow-xl cursor-pointer"
-            >
-              <Calculator className="w-4 h-4" />
-              <span>Get Online Fee &amp; Scope Estimate</span>
-            </motion.button>
-            <motion.div whileHover={{ scale: 1.03 }} whileTap={{ scale: 0.97 }} className="w-full sm:w-auto">
-              <Link
-                to="/contact"
-                className="w-full sm:w-auto inline-flex items-center justify-center space-x-2 bg-white/5 hover:bg-white/10 text-white font-sans font-semibold text-sm px-8 py-4 rounded-xl border border-white/10 transition-colors"
-              >
-                <span>Contact Us</span>
-                <ArrowRight className="w-4 h-4" />
-              </Link>
-            </motion.div>
-          </motion.div>
-        </motion.div>
-      </section>
+      <HomeCta />
 
       {/* 8. PROJECT DETAIL MODAL */}
       <AnimatePresence>

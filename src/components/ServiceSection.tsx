@@ -6,49 +6,48 @@ import dashboardBg from "../assets/images/photo_2026-07-22_12-04-08.jpg";
 export default function ServicesSection() {
   const [activeService, setActiveService] = useState(0);
 
-  const services = [
-    {
-      id: "001",
-      title: "Planning & Design",
-      label: "Feasibility & Pre-Construction",
-      description: "Feasibility Studies • Project planning and coordination • Design review and coordination (Buildability, coordination, and alignment with project requirements) • Cost planning and budget monitoring • Programme and schedule development • Risk management • Stakeholder management",
-      metricLabel: "Feasibility Accuracy",
-      metricValue: "99.4%",
-      metricChange: "Risk Mitigation Rate ↑98%",
-      icon: Shield,
-    },
-    {
-      id: "002",
-      title: "Procurement & Tendering",
-      label: "Digital Project Controls",
-      description: "Procurement strategy • Tender evaluation and contractor selection support • Contract review • Cost and commercial review",
-      metricLabel: "Schedule Variance",
-      metricValue: "0.0 Days",
-      metricChange: "120+ Real-Time Audits",
-      icon: Activity,
-    },
-    {
-      id: "003",
-      title: "Project Monitoring & Control",
-      label: "Quality & Cost Governance",
-      description: "Project Monitoring • Technical oversight (Compliance, specifications, inspections, testing, and technical review) • Quality assurance • Contract administration • Programme and schedule monitoring • Cost and budget monitoring • Progress reporting • Risk management • Stakeholder coordination",
-      metricLabel: "Capital Protected",
-      metricValue: "₦50B+",
-      metricChange: "Cost Overruns Prevented ↓100%",
-      icon: BarChart3,
-    },
-    {
-      id: "004",
-      title: "Project Close-out & Handover",
-      label: "Fiduciary Handover & Governance",
-      description: "Defect management (snagging/punch lists) • Final inspections • Documentation and handover",
-      metricLabel: "Handover Compliance",
-      metricValue: "100%",
-      metricChange: "Verified Fiduciary Audit",
-      icon: Layers,
-    },
-  ];
-
+ const services = [
+  {
+    id: "001",
+    title: "Pre-Project & Planning",
+    label: "Feasibility & Planning",
+    description: "Feasibility studies • Project planning and coordination • Design review and coordination (Buildability, coordination, and alignment with project requirements)",
+    metricLabel: "Typical Fee",
+    metricValue: "₦300k – ₦500k",
+    metricChange: "Per fixed-fee assignment",
+    icon: Shield,
+  },
+  {
+    id: "002",
+    title: "Procurement & Commercial Advisory",
+    label: "Procurement & Commercial",
+    description: "Procurement strategy • Tender evaluation and contractor selection support • Contract review • Cost and commercial review",
+    metricLabel: "Governance",
+    metricValue: "Independent",
+    metricChange: "Client-side advisory only",
+    icon: Activity,
+  },
+  {
+    id: "003",
+    title: "Project Delivery & Technical Oversight",
+    label: "Delivery & Oversight",
+    description: "Project delivery monitoring • Technical oversight (Compliance, specifications, inspections, testing, and technical review) • Quality assurance • Contract administration",
+    metricLabel: "Monthly Retainer",
+    metricValue: "₦1M – ₦1.5M",
+    metricChange: "Per month",
+    icon: BarChart3,
+  },
+  {
+    id: "004",
+    title: "Project Close-out & Handover",
+    label: "Close-out & Handover",
+    description: "Project close-out • Defect management (snagging/punch lists) • Final inspections • Documentation and handover",
+    metricLabel: "Outcome",
+    metricValue: "Verified",
+    metricChange: "Full documentation & handover",
+    icon: Layers,
+  },
+];
   const current = services[activeService];
 
   return (
@@ -80,7 +79,7 @@ export default function ServicesSection() {
 
               {/* Floating Dynamic White Metric Card (Exact Match to Reference Card) */}
               <div className="absolute inset-x-6 bottom-8 sm:bottom-10 sm:left-8 sm:right-auto sm:max-w-[380px] p-6 rounded-2xl bg-white text-navy-dark shadow-2xl backdrop-blur-md transition-all duration-500">
-                <div className="flex items-center justify-between mb-6">
+                <div className="flex items-center justify-between mb-6 my-2">
                   <span className="font-mono text-xs font-semibold uppercase tracking-wider text-navy-dark/70">
                     {current.metricLabel}
                   </span>
@@ -96,12 +95,12 @@ export default function ServicesSection() {
                     animate={{ opacity: 1, y: 0 }}
                     exit={{ opacity: 0, y: -10 }}
                     transition={{ duration: 0.3 }}
-                    className="flex items-baseline justify-between"
+                    className="grid grid-cols-1 items-baseline justify-between"
                   >
-                    <span className="font-sans font-black text-4xl sm:text-5xl text-navy-dark tracking-tight">
+                    <span className="font-sans font-black text-xl sm:text-2xl text-navy-dark tracking-tight">
                       {current.metricValue}
                     </span>
-                    <span className="font-mono text-xs font-bold text-electric-teal bg-electric-teal/10 px-2.5 py-1 rounded-full">
+                    <span className="font-mono text-xs font-bold text-electric-teal bg-electric-teal/10 py-1 rounded-full">
                       {current.metricChange}
                     </span>
                   </motion.div>
@@ -184,7 +183,7 @@ export default function ServicesSection() {
                 Independent Consultancy Scope
               </span>
               <p className="font-sans text-sm sm:text-base text-text-body leading-relaxed">
-                We are an independent consultancy; we do not undertake construction work, employ subcontractors, or hold construction contracts. Our focus is on providing expert guidance, oversight, and project leadership so our clients can make informed decisions and achieve successful project outcomes.
+                We are an independent consultancy. Our focus is on providing expert guidance, oversight, and project leadership so our clients can make informed decisions and achieve successful project outcomes.
               </p>
             </div>
           </div>

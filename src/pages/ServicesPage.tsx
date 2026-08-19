@@ -55,123 +55,122 @@ export default function ServicesPage() {
   const [selectedService, setSelectedService] = useState<ServicePillar | null>(null);
 
   const pillars: ServicePillar[] = [
-    {
-      id: "pmc-management",
-      categoryLabel: "Project Management",
-      number: "01",
-      title: "Program & Project Management",
-      tagline: "Unbiased, client-side project governance from inception to completion.",
-      summary: "We act as your dedicated project management consultant (PMC). Operating strictly on the client's side, we manage risk, oversee contractors, enforce quality benchmarks, and keep schedules on track without supplier conflicts.",
-      icon: Briefcase,
-      subServices: [
-        { name: "Client-Side PMC Leadership", desc: "Full representative oversight ensuring contractor compliance with project goals." },
-        { name: "Site Supervision & Inspection", desc: "Daily on-site engineering presence monitoring structural execution." },
-        { name: "Quality Assurance & COREN Compliance", desc: "Strict verification of concrete cube strengths, rebar spacing, and structural integrity." },
-        { name: "HSE & Site Safety Governance", desc: "Enforcing international health, safety, and environmental standards on active sites." }
-      ],
-      keyOutcome: "Zero unverified change orders and 100% independent site supervision.",
-      sectors: ["Commercial Real Estate", "Residential Estates", "Healthcare & Education"],
-      scopeDetails: [
-        "Inception & Feasibility Risk Management Plan",
-        "Weekly Independent Site Progress Audits",
-        "Material Testing Oversight (Concrete, Steel, Aggregates)",
-        "Contractor Site Coordination & Conflict Resolution"
-      ]
-    },
-    {
-      id: "cost-commercial",
-      categoryLabel: "Cost & Commercial",
-      number: "02",
-      title: "Cost & Commercial Management",
-      tagline: "Precision quantity surveying, BOQ auditing, and capital protection.",
-      summary: "Our RICS-aligned quantity surveying services protect your capital against cost overruns, inflated materials pricing, and unearned contractor claims. We audit every line item against real street prices.",
-      icon: BarChart3,
-      subServices: [
-        { name: "Bill of Quantities (BOQ) Audit", desc: "Line-by-line verification of material quantities and unit rates before contract award." },
-        { name: "Valuation & Payment Certification", desc: "Authorizing contractor disbursements only after physical work is measured and verified." },
-        { name: "Value Engineering", desc: "Identifying cost optimization opportunities without compromising structural longevity." },
-        { name: "Variations & Claims Management", desc: "Rigorous defense against inflated contractor variation requests and delay claims." }
-      ],
-      keyOutcome: "Average 12-18% capital savings identified through pre-construction BOQ auditing.",
-      sectors: ["Institutional Developments", "Diaspora Real Estate", "Retail & Hospitality"],
-      scopeDetails: [
-        "Pre-Contract Cost Estimating & Market Rate Benchmarking",
-        "Monthly Interim Valuation Measurement On-Site",
-        "Contractor Financial Health & Liquidity Audits",
-        "Final Account Negotiation & Settlement"
-      ]
-    },
-    {
-      id: "digital-controls",
-      categoryLabel: "Digital Controls",
-      number: "03",
-      title: "Digital Project Controls & Analytics",
-      tagline: "Cloud dashboards, drone surveillance, and real-time earned value tracking.",
-      summary: "Eliminate distance and blind spots. Our digital controls suite connects overseas investors and developers to their construction site with live drone scans, time-lapse webcams, and EVM schedule analytics.",
-      icon: Cpu,
-      subServices: [
-        { name: "Earned Value Management (EVM)", desc: "Scientific tracking comparing budget spent vs. actual physical work delivered." },
-        { name: "Drone & 3D Progress Scanning", desc: "High-resolution orthomosaic imagery and volumetric progress verification." },
-        { name: "Cloud Client Portal Access", desc: "24/7 online dashboard with milestone tracking, photos, and lab test certificates." },
-        { name: "Schedule Variance Analysis", desc: "Early warning detection for critical path delays and bottleneck resolution." }
-      ],
-      keyOutcome: "Real-time visibility with zero hidden schedule slippage.",
-      sectors: ["Diaspora Capital", "Commercial Real Estate", "Infrastructure & Logistics"],
-      scopeDetails: [
-        "Bi-weekly High-Resolution Drone Scans & 3D Site Mapping",
-        "Cloud-based Progress Dashboard with Document Repository",
-        "Automated Cost Performance Index (CPI) and Schedule Performance Index (SPI) Alerts",
-        "Tamper-proof Digital Photo & Video Inspection Logs"
-      ]
-    },
-    {
-      id: "contract-advisory",
-      categoryLabel: "Advisory & Risk",
-      number: "04",
-      title: "Contract & Procurement Advisory",
-      tagline: "Equitable contract structuring, FIDIC/JCT governance, and procurement strategy.",
-      summary: "Bad contracts breed construction disputes. We help clients structure robust, dispute-resistant contracts, select qualified contractors through transparent tendering, and mitigate legal risks.",
-      icon: Scale,
-      subServices: [
-        { name: "Contract Structuring (JCT / FIDIC)", desc: "Adapting international standard contracts for West African legal frameworks." },
-        { name: "Tender Management & Contractor Selection", desc: "Transparent, competitive bidding process with background financial due diligence." },
-        { name: "Dispute Avoidance & Mediation", desc: "Early neutral evaluation to resolve contractor conflicts before litigation." },
-        { name: "Risk Management & Feasibility Advice", desc: "Identifying site, soil, zoning, and regulatory risks prior to land purchase." }
-      ],
-      keyOutcome: "Dispute-free contract execution and enforceable performance guarantees.",
-      sectors: ["Commercial Real Estate", "Infrastructure", "Public-Private Partnerships (PPP)"],
-      scopeDetails: [
-        "Contractor Prequalification & Background Checks",
-        "Tender Analysis & Negotiations Matrix",
-        "Milestone-based Escrow Payment Clauses",
-        "Dispute Resolution Board Representation"
-      ]
-    },
-    {
-      id: "handover-governance",
-      categoryLabel: "Contract & Handover",
-      number: "05",
-      title: "Handover & Asset Governance",
-      tagline: "Flawless snagging, final account reconciliation, and operational readiness.",
-      summary: "Crossing the finish line safely. We manage the delicate transition from construction to occupancy, ensuring every defect is rectified, as-built drawings are audited, and accounts are settled transparently.",
-      icon: FileText,
-      subServices: [
-        { name: "Snagging & Defect Inspection", desc: "Comprehensive room-by-room audit identifying finishing, MEP, and structural defects." },
-        { name: "Final Account Audit & Reconciliation", desc: "Detailed financial closeout ensuring no unearned retention funds are disbursed." },
-        { name: "As-Built & Statutory Approval Audit", desc: "Verifying all statutory certificates, occupancy permits, and warranty documents." },
-        { name: "Facility Operational Readiness", desc: "Guiding the handover of O&M manuals and facility management team onboarding." }
-      ],
-      keyOutcome: "100% defect-rectified handover and audit-ready asset documentation.",
-      sectors: ["Residential Estates", "Commercial Buildings", "Healthcare & Hospitality"],
-      scopeDetails: [
-        "Digital Snagging List with Photo Evidence and Contractor Deadlines",
-        "Final Account Certificate Verification",
-        "Defects Liability Period (DLP) Monitoring",
-        "Handover Asset Inventory & O&M Manual Handover"
-      ]
-    }
-  ];
-
+  {
+    "id": "pmc-management",
+    "categoryLabel": "Project Management",
+    "number": "01",
+    "title": "Program & Project Management",
+    "tagline": "Independent, client-side project governance from inception to completion.",
+    "summary": "We act as your dedicated project management consultant, operating strictly on the client's side. We manage risk, oversee delivery, enforce quality benchmarks, and keep schedules on track—without the conflicts of interest that come from also doing construction work.",
+    "icon": "Briefcase",
+    "subServices": [
+      { "name": "Client-Side PMC Leadership", "desc": "Full representative oversight ensuring delivery aligns with your project goals and requirements." },
+      { "name": "Project Planning & Coordination", "desc": "Feasibility studies, design review, programme development, and stakeholder coordination." },
+      { "name": "Quality Assurance & Technical Oversight", "desc": "Verification of compliance, specifications, inspections, testing, and technical review." },
+      { "name": "Risk & Stakeholder Management", "desc": "Proactive risk identification and continuous stakeholder coordination throughout the project lifecycle." }
+    ],
+    "keyOutcome": "Independent governance with transparent reporting and zero conflicts of interest.",
+    "sectors": ["Commercial Developments", "Residential Estates", "Infrastructure", "Industrial Projects", "Public Sector"],
+    "scopeDetails": [
+      "Inception & Feasibility Studies",
+      "Design Review & Coordination",
+      "Programme & Schedule Development",
+      "Weekly Independent Progress Reporting"
+    ]
+  },
+  {
+    "id": "cost-commercial",
+    "categoryLabel": "Cost & Commercial",
+    "number": "02",
+    "title": "Cost & Commercial Management",
+    "tagline": "Cost planning, budget monitoring, and capital protection.",
+    "summary": "Our independent cost and commercial services protect your investment against overruns and unearned claims. We monitor budgets, review commercial positions, and verify that disbursements match physically completed work.",
+    "icon": "BarChart3",
+    "subServices": [
+      { "name": "Cost Planning & Budget Monitoring", "desc": "Continuous tracking of project costs against approved budgets from planning through completion." },
+      { "name": "Cost & Commercial Review", "desc": "Independent assessment of commercial positions, payment applications, and financial risk." },
+      { "name": "Procurement Strategy", "desc": "Advising on procurement routes and supporting transparent contractor selection." },
+      { "name": "Contract Administration", "desc": "Managing change orders, variations, and ensuring fair contract compliance." }
+    ],
+    "keyOutcome": "Capital protection through independent financial oversight and verified disbursements.",
+    "sectors": ["Diaspora Real Estate", "Commercial Developments", "Institutional Projects", "Industrial Developments"],
+    "scopeDetails": [
+      "Pre-Contract Cost Estimating & Planning",
+      "Monthly Budget Monitoring & Reporting",
+      "Commercial Review & Benchmarking",
+      "Final Account Negotiation & Settlement"
+    ]
+  },
+  {
+    "id": "digital-controls",
+    "categoryLabel": "Digital Controls",
+    "number": "03",
+    "title": "Digital Project Controls & Reporting",
+    "tagline": "Modern project controls, cloud reporting, and real-time visibility.",
+    "summary": "We leverage modern technologies and digital tools to improve efficiency, reduce operating costs, and provide transparent project reporting—keeping you informed wherever you are based.",
+    "icon": "Cpu",
+    "subServices": [
+      { "name": "Programme & Schedule Monitoring", "desc": "Tracking progress against planned milestones and critical paths." },
+      { "name": "Digital Reporting & Analytics", "desc": "Cloud-based dashboards and progress documentation for real-time visibility." },
+      { "name": "Progress Reporting", "desc": "Regular, transparent updates on project status, risks, and financial position." },
+      { "name": "Schedule Development & Control", "desc": "Early warning detection for delays and proactive bottleneck resolution." }
+    ],
+    "keyOutcome": "Real-time visibility and data-driven decision making across all project phases.",
+    "sectors": ["Diaspora Capital", "Commercial Developments", "Infrastructure", "Corporate Projects"],
+    "scopeDetails": [
+      "Cloud-based Progress Dashboards",
+      "Schedule Performance Tracking",
+      "Digital Document Repository",
+      "Automated Risk & Variance Alerts"
+    ]
+  },
+  {
+    "id": "contract-advisory",
+    "categoryLabel": "Advisory & Risk",
+    "number": "04",
+    "title": "Contract & Procurement Advisory",
+    "tagline": "Procurement strategy, tender evaluation, and contract governance.",
+    "summary": "We provide independent procurement and contract advisory services—helping you structure robust agreements, select qualified contractors through transparent tendering, and mitigate commercial and legal risks before commitments are made.",
+    "icon": "Scale",
+    "subServices": [
+      { "name": "Contract Review", "desc": "Reviewing contract terms to protect client interests and reduce exposure." },
+      { "name": "Tender Evaluation & Contractor Selection", "desc": "Transparent, competitive bidding process with background due diligence." },
+      { "name": "Procurement Strategy", "desc": "Developing procurement routes tailored to project size, complexity, and risk profile." },
+      { "name": "Risk Management & Feasibility Advice", "desc": "Identifying site, regulatory, and commercial risks prior to project commencement." }
+    ],
+    "keyOutcome": "Transparent procurement and enforceable contract terms that protect your interests.",
+    "sectors": ["Commercial Developments", "Infrastructure", "Public Sector", "Industrial Projects"],
+    "scopeDetails": [
+      "Contractor Prequalification & Background Checks",
+      "Tender Analysis & Negotiations",
+      "Milestone-based Payment Structures",
+      "Risk Assessment & Feasibility Studies"
+    ]
+  },
+  {
+    "id": "handover-governance",
+    "categoryLabel": "Contract & Handover",
+    "number": "05",
+    "title": "Handover & Asset Governance",
+    "tagline": "Defect management, final inspections, and operational readiness.",
+    "summary": "We manage the transition from project delivery to operational readiness—ensuring every defect is rectified, as-built documentation is complete, and accounts are settled transparently before handover.",
+    "icon": "FileText",
+    "subServices": [
+      { "name": "Defect Management", "desc": "Comprehensive snagging and punch-list tracking until full rectification." },
+      { "name": "Final Inspections", "desc": "Independent verification that all works meet specifications and quality standards." },
+      { "name": "Documentation & Handover", "desc": "Ensuring all manuals, certificates, and records are complete and audit-ready." },
+      { "name": "Project Close-out", "desc": "Structured completion, final account reconciliation, and seamless handover." }
+    ],
+    "keyOutcome": "Defect-rectified handover with complete documentation and transparent financial closeout.",
+    "sectors": ["Residential Estates", "Commercial Buildings", "Healthcare & Education", "Industrial Facilities"],
+    "scopeDetails": [
+      "Digital Snagging Lists with Contractor Deadlines",
+      "Final Account Certificate Verification",
+      "Defects Liability Period Monitoring",
+      "O&M Manual & Asset Inventory Handover"
+    ]
+  }
+]
   return (
     <div className="pt-20 md:pt-24 bg-[#0a0e17] text-[#b8c4d0] font-sans min-h-screen">
 
