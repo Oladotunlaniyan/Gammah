@@ -1,7 +1,8 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "motion/react";
-import { ArrowRight, Shield, Activity, BarChart3, Layers, AlertCircle } from "lucide-react";
+import { ArrowRight, Shield, Activity, BarChart3, Layers, AlertCircle} from "lucide-react";
 import dashboardBg from "../assets/images/photo_2026-07-22_12-04-08.jpg";
+import { Link } from "react-router-dom";
 
 export default function ServicesSection() {
   const [activeService, setActiveService] = useState(0);
@@ -21,7 +22,7 @@ export default function ServicesSection() {
     id: "002",
     title: "Procurement & Commercial Advisory",
     label: "Procurement & Commercial",
-    description: "Procurement strategy • Tender evaluation and contractor selection support • Contract review • Cost and commercial review",
+    description: "Procurement strategy • Tender evaluation • contractor selection support • Contract review • Cost and commercial review",
     metricLabel: "Governance",
     metricValue: "Independent",
     metricChange: "Client-side advisory only",
@@ -159,7 +160,9 @@ export default function ServicesSection() {
                 className="inline-flex items-center space-x-3 bg-white hover:bg-warm-gold font-mono font-bold text-xs uppercase tracking-wider px-6 py-4 rounded-none transition-all duration-300 shadow-lg group"
               >
                 <span className="text-[#4a90d9] group-hover:text-white">▪</span>
-                <span className="text-navy-dark hover:text-white">Explore PMC Services</span>
+                <Link to="/services" className="text-navy-dark hover:text-white">
+                  Explore PMC Services
+                </Link>
                 <ArrowRight className="w-4 h-4 ml-1 transform group-hover:translate-x-1 transition-transform hover:text-white" />
               </a>
             </div>

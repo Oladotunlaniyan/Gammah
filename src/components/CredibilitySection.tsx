@@ -81,7 +81,7 @@ export default function CredibilitySection() {
         {/* SECTION HEADER */}
         <div className="text-center max-w-3xl mx-auto space-y-4">
           <h2 className="font-sans font-black text-white text-3xl sm:text-4xl lg:text-5xl tracking-tight leading-tight">
-            Why Institutional & Diaspora Investors Trust Gamah Projects
+            Why Clients Trust Gamah Projects
           </h2>
         </div>
 
