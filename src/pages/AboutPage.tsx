@@ -222,17 +222,17 @@ export default function AboutPage() {
                 About Gamah Projects
               </motion.h2>
               <motion.p
-                variants={fadeUp}
-                className="font-sans text-sm sm:text-base text-[#b8c4d0] leading-relaxed"
-              >
-                Gamah Projects is an independent project management and fiduciary advisory agency passionate about protecting capital and enforcing structural discipline. We specialize in civil engineering oversight, quantity surveying, and contractor accountability, helping diaspora families, institutional developers, and businesses build safely across West Africa.
-              </motion.p>
-              <motion.p
-                variants={fadeUp}
-                className="font-sans text-sm sm:text-base text-[#b8c4d0] leading-relaxed"
-              >
-                At Gamah Projects, we follow a rigorous and transparent inspection process to ensure the successful delivery of exceptional developments. Our process combines UK commercial governance, COREN &amp; RICS engineering best practices, and an unwavering client-centric approach.
-              </motion.p>
+  variants={fadeUp}
+  className="font-sans text-sm sm:text-base text-[#b8c4d0] leading-relaxed"
+>
+  Gamah Projects is an independent project advisory and management consultancy dedicated to improving project delivery across Africa. We partner with developers, investors, corporate organisations, and public-sector clients to provide expert oversight, manage risk, and protect capital through every phase of the project lifecycle.
+</motion.p>
+<motion.p
+  variants={fadeUp}
+  className="font-sans text-sm sm:text-base text-[#b8c4d0] leading-relaxed"
+>
+  By combining local market insight with international best practices, we help clients strengthen governance, improve quality, and achieve transparent outcomes. We do not undertake execution work, employ subcontractors, or hold supplier contracts ensuring our advice remains unbiased and entirely in your interest.
+</motion.p>
             </motion.div>
 
             <div className="lg:col-span-5">
@@ -328,7 +328,7 @@ export default function AboutPage() {
                   <div className="relative w-24 h-24 sm:w-28 sm:h-28 rounded-2xl overflow-hidden border-2 border-warm-gold/40 flex-shrink-0 shadow-lg">
                     <img
                       src={founderPhoto}
-                      alt="Engr. Gbenga Daniel Akinsipe - Founder & Lead Civil Engineer"
+                      alt="Engr. Gbenga Daniel Akinsipe - Founder"
                       className="w-full h-full object-cover object-top"
                     />
                   </div>
@@ -337,7 +337,7 @@ export default function AboutPage() {
                       Engr. Gbenga Daniel Akinsipe
                     </h3>
                     <p className="font-sans text-xs sm:text-sm text-warm-gold font-semibold">
-                      Founder & Lead Civil Engineer (COREN, MNSE, RICS Affiliate)
+                      Founder | Project Delivery & Engineering Specialist
                     </p>
                   </div>
                 </div>
