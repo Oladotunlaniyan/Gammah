@@ -6,7 +6,7 @@ const HomeCta = () => {
      <section className="py-20 bg-linear-to-r from-[#0d1321] via-navy-dark to-[#0d1321] border-t border-white/10 relative">
         <div className="max-w-5xl mx-auto px-6 text-center space-y-6">
           <h2 className="font-sans font-extrabold text-white text-3xl sm:text-5xl leading-tight">
-            Schedule an Advisory Session with Our team
+            Schedule a Session with Our team
           </h2>
           <div className="pt-4 flex flex-col sm:flex-row items-center justify-center gap-4">
             <Link

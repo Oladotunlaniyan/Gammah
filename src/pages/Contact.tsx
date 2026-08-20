@@ -301,7 +301,7 @@ export default function ContactPage() {
                       </div>
                     </div>
 
-                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                    <div className="grid grid-cols-1 gap-6">
                       <div>
                         <label htmlFor="phone" className="block text-xs font-semibold uppercase tracking-wider text-white mb-2 font-sans">
                           Phone / WhatsApp *
@@ -313,19 +313,6 @@ export default function ContactPage() {
                           value={formData.phone}
                           onChange={handleChange}
                           placeholder="e.g. +44 7000 000000 or +234..."
-                          className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-warm-gold text-sm font-sans transition-colors"
-                        />
-                      </div>
-                      <div>
-                        <label htmlFor="siteLocation" className="block text-xs font-semibold uppercase tracking-wider text-white mb-2 font-sans">
-                          Target Site Location
-                        </label>
-                        <input
-                          type="text"
-                          id="siteLocation"
-                          value={formData.siteLocation}
-                          onChange={handleChange}
-                          placeholder="e.g. Ikoyi, Lekki, Victoria Island, Abuja CBD..."
                           className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-warm-gold text-sm font-sans transition-colors"
                         />
                       </div>
