@@ -334,7 +334,7 @@ export default function AboutPage() {
                   </div>
                   <div className="space-y-1">
                     <h3 className="font-sans font-extrabold text-white text-2xl sm:text-3xl tracking-tight">
-                      Engr. Gbenga Daniel Akinsipe
+                      Engr. Daniel Gbenga Akinsipe
                     </h3>
                     <p className="font-sans text-xs sm:text-sm text-warm-gold font-semibold">
                       Founder | Project Delivery & Engineering Specialist
