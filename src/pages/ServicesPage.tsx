@@ -4,17 +4,14 @@ import { motion, AnimatePresence } from "motion/react";
 import {
   ArrowRight,
   ShieldCheck,
-  BarChart3,
-  FileText,
-  Cpu,
-  Scale,
   CheckCircle2,
+  Scale,
   X,
-  ChevronRight,
-  Compass,
+  FileText,
   Briefcase,
-  Building2
+  ChevronRight,
 } from "lucide-react";
+import HomeCta from "../components/HomeCta";
 
 
 interface SubService {
@@ -24,7 +21,6 @@ interface SubService {
 
 interface ServicePillar {
   id: string;
-  categoryLabel: string;
   number: string;
   title: string;
   tagline: string;
@@ -54,123 +50,112 @@ const staggerContainer = {
 export default function ServicesPage() {
   const [selectedService, setSelectedService] = useState<ServicePillar | null>(null);
 
-  const pillars: ServicePillar[] = [
+const pillars: ServicePillar[] = [
   {
-    "id": "pmc-management",
-    "categoryLabel": "Project Management",
-    "number": "01",
-    "title": "Program & Project Management",
-    "tagline": "Independent, client-side project governance from inception to completion.",
-    "summary": "We act as your dedicated project management consultant, operating strictly on the client's side. We manage risk, oversee delivery, enforce quality benchmarks, and keep schedules on track—without the conflicts of interest that come from also doing construction work.",
-    "icon": "Briefcase",
-    "subServices": [
-      { "name": "Client-Side PMC Leadership", "desc": "Full representative oversight ensuring delivery aligns with your project goals and requirements." },
-      { "name": "Project Planning & Coordination", "desc": "Feasibility studies, design review, programme development, and stakeholder coordination." },
-      { "name": "Quality Assurance & Technical Oversight", "desc": "Verification of compliance, specifications, inspections, testing, and technical review." },
-      { "name": "Risk & Stakeholder Management", "desc": "Proactive risk identification and continuous stakeholder coordination throughout the project lifecycle." }
+    id: "pre-project-planning",
+    number: "01",
+    title: "Pre-Project and Planning",
+    tagline: "Feasibility studies, planning, design review, and schedule development.",
+    summary: "We support clients during the pre-project and planning phase with feasibility studies, project planning and coordination, design review and coordination, cost planning and budget monitoring, programme and schedule development, risk management, and stakeholder management.",
+    icon: ShieldCheck,
+    subServices: [
+      { name: "Feasibility Studies", desc: "Independent assessment of project viability and requirements." },
+      { name: "Project planning and coordination", desc: "End-to-end planning and coordination across all stakeholders." },
+      { name: "Design review and coordination", desc: "Buildability, coordination, and alignment with project requirements." },
+      { name: "Cost planning and budget monitoring", desc: "Establishing and tracking project budgets from inception." },
+      { name: "Programme and schedule development", desc: "Creating realistic timelines and delivery schedules." },
+      { name: "Risk management", desc: "Identifying and mitigating project risks before commitments are made." },
+      { name: "Stakeholder management", desc: "Continuous coordination with all project stakeholders." }
     ],
-    "keyOutcome": "Independent governance with transparent reporting and zero conflicts of interest.",
-    "sectors": ["Commercial Developments", "Residential Estates", "Infrastructure", "Industrial Projects", "Public Sector"],
-    "scopeDetails": [
-      "Inception & Feasibility Studies",
-      "Design Review & Coordination",
-      "Programme & Schedule Development",
-      "Weekly Independent Progress Reporting"
+    keyOutcome: "Clear requirements, realistic budgets, and achievable schedules from day one.",
+    sectors: ["Private Developers", "Diaspora Investors", "Corporate Organisations", "Industrial Operators", "Financial Institutions", "Public-Sector Clients"],
+    scopeDetails: [
+      "Feasibility Studies",
+      "Project planning and coordination",
+      "Design review and coordination (Buildability, coordination, and alignment with project requirements)",
+      "Cost planning and budget monitoring",
+      "Programme and schedule development",
+      "Risk management",
+      "Stakeholder management"
     ]
   },
   {
-    "id": "cost-commercial",
-    "categoryLabel": "Cost & Commercial",
-    "number": "02",
-    "title": "Cost & Commercial Management",
-    "tagline": "Cost planning, budget monitoring, and capital protection.",
-    "summary": "Our independent cost and commercial services protect your investment against overruns and unearned claims. We monitor budgets, review commercial positions, and verify that disbursements match physically completed work.",
-    "icon": "BarChart3",
-    "subServices": [
-      { "name": "Cost Planning & Budget Monitoring", "desc": "Continuous tracking of project costs against approved budgets from planning through completion." },
-      { "name": "Cost & Commercial Review", "desc": "Independent assessment of commercial positions, payment applications, and financial risk." },
-      { "name": "Procurement Strategy", "desc": "Advising on procurement routes and supporting transparent contractor selection." },
-      { "name": "Contract Administration", "desc": "Managing change orders, variations, and ensuring fair contract compliance." }
+    id: "procurement-commercial",
+    number: "02",
+    title: "Procurement & Commercial Advisory",
+    tagline: "Procurement strategy, tender support, contract review, and commercial oversight.",
+    summary: "We provide independent procurement and commercial advisory services including procurement strategy, tender evaluation and contractor selection support, contract review, and cost and commercial review.",
+    icon: Scale,
+    subServices: [
+      { name: "Procurement strategy", desc: "Defining the optimal approach to sourcing and contracting." },
+      { name: "Tender evaluation and contractor selection support", desc: "Independent assessment and selection of qualified contractors." },
+      { name: "Contract review", desc: "Reviewing terms to protect client interests and reduce exposure." },
+      { name: "Cost and commercial review", desc: "Independent assessment of costs and commercial positions." }
     ],
-    "keyOutcome": "Capital protection through independent financial oversight and verified disbursements.",
-    "sectors": ["Diaspora Real Estate", "Commercial Developments", "Institutional Projects", "Industrial Developments"],
-    "scopeDetails": [
-      "Pre-Contract Cost Estimating & Planning",
-      "Monthly Budget Monitoring & Reporting",
-      "Commercial Review & Benchmarking",
-      "Final Account Negotiation & Settlement"
+    keyOutcome: "Transparent procurement and fair contract terms that protect your investment.",
+    sectors: ["Private Developers", "Corporate Organisations", "Industrial Operators", "Public-Sector Clients"],
+    scopeDetails: [
+      "Procurement strategy",
+      "Tender evaluation and contractor selection support",
+      "Contract review",
+      "Cost and commercial review"
     ]
   },
   {
-    "id": "digital-controls",
-    "categoryLabel": "Digital Controls",
-    "number": "03",
-    "title": "Digital Project Controls & Reporting",
-    "tagline": "Modern project controls, cloud reporting, and real-time visibility.",
-    "summary": "We leverage modern technologies and digital tools to improve efficiency, reduce operating costs, and provide transparent project reporting—keeping you informed wherever you are based.",
-    "icon": "Cpu",
-    "subServices": [
-      { "name": "Programme & Schedule Monitoring", "desc": "Tracking progress against planned milestones and critical paths." },
-      { "name": "Digital Reporting & Analytics", "desc": "Cloud-based dashboards and progress documentation for real-time visibility." },
-      { "name": "Progress Reporting", "desc": "Regular, transparent updates on project status, risks, and financial position." },
-      { "name": "Schedule Development & Control", "desc": "Early warning detection for delays and proactive bottleneck resolution." }
+    id: "delivery-oversight",
+    number: "03",
+    title: "Project Delivery and Technical Oversight",
+    tagline: "Construction monitoring, technical oversight, quality assurance, and progress reporting.",
+    summary: "We deliver independent oversight during project execution including construction monitoring, technical oversight, quality assurance, contract administration, programme and schedule monitoring, cost and budget monitoring, progress reporting, risk management, and stakeholder coordination.",
+    icon: Briefcase,
+    subServices: [
+      { name: "Construction monitoring", desc: "On-site monitoring of construction activities and compliance." },
+      { name: "Technical oversight", desc: "Compliance, specifications, inspections, testing, and technical review." },
+      { name: "Quality assurance", desc: "Verification that work meets required standards and specifications." },
+      { name: "Contract administration", desc: "Managing contract compliance, changes, and documentation." },
+      { name: "Programme and schedule monitoring", desc: "Tracking progress against agreed timelines." },
+      { name: "Cost and budget monitoring", desc: "Ongoing tracking of actual costs against approved budgets." },
+      { name: "Progress reporting", desc: "Regular transparent reporting on project status and performance." },
+      { name: "Risk management", desc: "Ongoing identification and mitigation of delivery risks." },
+      { name: "Stakeholder coordination", desc: "Managing communication and coordination across all parties." }
     ],
-    "keyOutcome": "Real-time visibility and data-driven decision making across all project phases.",
-    "sectors": ["Diaspora Capital", "Commercial Developments", "Infrastructure", "Corporate Projects"],
-    "scopeDetails": [
-      "Cloud-based Progress Dashboards",
-      "Schedule Performance Tracking",
-      "Digital Document Repository",
-      "Automated Risk & Variance Alerts"
+    keyOutcome: "Verified quality, controlled costs, and transparent progress throughout delivery.",
+    sectors: ["Commercial Developments", "Infrastructure", "Industrial Projects", "Public-Sector Clients"],
+    scopeDetails: [
+      "Construction monitoring",
+      "Technical oversight (Compliance, specifications, inspections, testing, and technical review)",
+      "Quality assurance",
+      "Contract administration",
+      "Programme and schedule monitoring",
+      "Cost and budget monitoring",
+      "Progress reporting",
+      "Risk management",
+      "Stakeholder coordination"
     ]
   },
   {
-    "id": "contract-advisory",
-    "categoryLabel": "Advisory & Risk",
-    "number": "04",
-    "title": "Contract & Procurement Advisory",
-    "tagline": "Procurement strategy, tender evaluation, and contract governance.",
-    "summary": "We provide independent procurement and contract advisory services—helping you structure robust agreements, select qualified contractors through transparent tendering, and mitigate commercial and legal risks before commitments are made.",
-    "icon": "Scale",
-    "subServices": [
-      { "name": "Contract Review", "desc": "Reviewing contract terms to protect client interests and reduce exposure." },
-      { "name": "Tender Evaluation & Contractor Selection", "desc": "Transparent, competitive bidding process with background due diligence." },
-      { "name": "Procurement Strategy", "desc": "Developing procurement routes tailored to project size, complexity, and risk profile." },
-      { "name": "Risk Management & Feasibility Advice", "desc": "Identifying site, regulatory, and commercial risks prior to project commencement." }
+    id: "closeout-handover",
+    number: "04",
+    title: "Project Close-out & Handover",
+    tagline: "Defect management, final inspections, and documentation handover.",
+    summary: "We manage the transition from project delivery to completion through project close-out, defect management, final inspections, and documentation and handover.",
+    icon: FileText,
+    subServices: [
+      { name: "Project close-out", desc: "Structured completion and reconciliation of project activities." },
+      { name: "Defect management", desc: "Snagging, punch lists, and tracking rectification of defects." },
+      { name: "Final inspections", desc: "Independent verification that all work meets specifications." },
+      { name: "Documentation and handover", desc: "Compilation and handover of all project records and certificates." }
     ],
-    "keyOutcome": "Transparent procurement and enforceable contract terms that protect your interests.",
-    "sectors": ["Commercial Developments", "Infrastructure", "Public Sector", "Industrial Projects"],
-    "scopeDetails": [
-      "Contractor Prequalification & Background Checks",
-      "Tender Analysis & Negotiations",
-      "Milestone-based Payment Structures",
-      "Risk Assessment & Feasibility Studies"
-    ]
-  },
-  {
-    "id": "handover-governance",
-    "categoryLabel": "Contract & Handover",
-    "number": "05",
-    "title": "Handover & Asset Governance",
-    "tagline": "Defect management, final inspections, and operational readiness.",
-    "summary": "We manage the transition from project delivery to operational readiness—ensuring every defect is rectified, as-built documentation is complete, and accounts are settled transparently before handover.",
-    "icon": "FileText",
-    "subServices": [
-      { "name": "Defect Management", "desc": "Comprehensive snagging and punch-list tracking until full rectification." },
-      { "name": "Final Inspections", "desc": "Independent verification that all works meet specifications and quality standards." },
-      { "name": "Documentation & Handover", "desc": "Ensuring all manuals, certificates, and records are complete and audit-ready." },
-      { "name": "Project Close-out", "desc": "Structured completion, final account reconciliation, and seamless handover." }
-    ],
-    "keyOutcome": "Defect-rectified handover with complete documentation and transparent financial closeout.",
-    "sectors": ["Residential Estates", "Commercial Buildings", "Healthcare & Education", "Industrial Facilities"],
-    "scopeDetails": [
-      "Digital Snagging Lists with Contractor Deadlines",
-      "Final Account Certificate Verification",
-      "Defects Liability Period Monitoring",
-      "O&M Manual & Asset Inventory Handover"
+    keyOutcome: "Complete documentation and defect-rectified handover.",
+    sectors: ["Private Developers", "Corporate Organisations", "Public-Sector Clients"],
+    scopeDetails: [
+      "Project close-out",
+      "Defect management (snagging/punch lists)",
+      "Final inspections",
+      "Documentation and handover"
     ]
   }
-]
+];
   return (
     <div className="pt-20 md:pt-24 bg-[#0a0e17] text-[#b8c4d0] font-sans min-h-screen">
 
@@ -198,9 +183,9 @@ export default function ServicesPage() {
             <h1 className="font-sans font-black text-white text-4xl sm:text-5xl lg:text-6xl tracking-tight leading-[1.1]">
               Global Expertise, Independent Project Controls
             </h1>
-            <p className="font-sans text-base sm:text-lg text-[#94a3b8] leading-relaxed">
-              We bring UK-grade commercial governance and COREN structural discipline to capital projects across West Africa. As an independent PMC, we do not build—we protect your investment, enforce standards, and eliminate construction risk.
-            </p>
+          <p className="font-sans text-base sm:text-lg text-[#94a3b8] leading-relaxed">
+  We combine local market knowledge with international best practices to improve project delivery across Africa. As an independent consultancy, we do not undertake execution work or hold contracts we protect your investment, enforce standards, and manage risk on your behalf.
+</p>
           </motion.div>
 
           {/* Quick Sector Tags */}
@@ -269,9 +254,6 @@ export default function ServicesPage() {
                     </div>
 
                     <div className="space-y-2">
-                      <span className="text-[10px] font-mono font-bold uppercase tracking-widest text-warm-gold bg-warm-gold/10 border border-warm-gold/20 px-2.5 py-0.5 rounded">
-                        {pillar.categoryLabel}
-                      </span>
                       <h3 className="font-sans font-extrabold text-white text-xl sm:text-2xl tracking-tight group-hover:text-warm-gold transition-colors leading-snug">
                         {pillar.title}
                       </h3>
@@ -305,7 +287,202 @@ export default function ServicesPage() {
 
         </div>
       </section>
+      <section className="py-20 md:py-28 border-t border-white/10 bg-[#0d1321]/60">
+  <div className="max-w-7xl mx-auto px-6 md:px-12 space-y-16">
 
+    {/* Section Header */}
+    <motion.div
+      className="max-w-5xl space-y-4"
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, margin: "-80px" }}
+      transition={{ duration: 0.6, ease: "easeOut" }}
+    >
+      <h2 className="font-sans font-black text-white text-3xl sm:text-4xl lg:text-5xl tracking-tight">
+        Pricing Structure
+      </h2>
+    </motion.div>
+
+    {/* Pricing Models 3-Column Grid */}
+    <motion.div
+      className="grid grid-cols-1 md:grid-cols-3 gap-8 items-stretch"
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true, margin: "-80px" }}
+      variants={staggerContainer}
+    >
+
+      {/* Model 1: Fixed Fee */}
+      <motion.div
+        variants={fadeUp}
+        transition={{ duration: 0.5, ease: "easeOut" }}
+        whileHover={{ y: -4 }}
+        className="rounded-3xl bg-[#0d1321] border border-white/10 p-8 flex flex-col h-full shadow-xl hover:border-warm-gold/40 transition-colors duration-300 relative group"
+      >
+        <div className="space-y-6 flex-1">
+          <div className="space-y-2">
+            <h3 className="font-sans font-black text-white text-xl sm:text-2xl tracking-tight">
+              Fixed Fee
+            </h3>
+            <div className="p-3.5 rounded-xl bg-white/[0.03] border border-white/10">
+              <span className="text-xs text-[#94a3b8] block font-mono uppercase">Fee Range</span>
+              <span className="font-sans font-extrabold text-warm-gold text-lg sm:text-xl">
+                Charge per assignment
+              </span>
+            </div>
+          </div>
+
+          <p className="text-xs sm:text-sm text-[#b8c4d0] leading-relaxed">
+            For short-term engagements or standalone advisory services that do not require full lifecycle involvement.
+          </p>
+
+          <div className="p-4 rounded-2xl bg-white/[0.03] border border-white/10 space-y-2">
+            <span className="font-mono text-xs font-bold uppercase tracking-wider text-white block">
+              Typically used for:
+            </span>
+            <ul className="space-y-2 text-xs text-[#94a3b8]">
+              <li className="flex items-start space-x-2">
+                <CheckCircle2 className="w-3.5 h-3.5 text-warm-gold flex-shrink-0 mt-0.5" />
+                <span>Feasibility studies</span>
+              </li>
+              <li className="flex items-start space-x-2">
+                <CheckCircle2 className="w-3.5 h-3.5 text-warm-gold flex-shrink-0 mt-0.5" />
+                <span>Design reviews and technical assessments</span>
+              </li>
+              <li className="flex items-start space-x-2">
+                <CheckCircle2 className="w-3.5 h-3.5 text-warm-gold flex-shrink-0 mt-0.5" />
+                <span>Project audits and health checks</span>
+              </li>
+              <li className="flex items-start space-x-2">
+                <CheckCircle2 className="w-3.5 h-3.5 text-warm-gold flex-shrink-0 mt-0.5" />
+                <span>Procurement and contract advisory</span>
+              </li>
+              <li className="flex items-start space-x-2">
+                <CheckCircle2 className="w-3.5 h-3.5 text-warm-gold flex-shrink-0 mt-0.5" />
+                <span>Claims and dispute support</span>
+              </li>
+              <li className="flex items-start space-x-2">
+                <CheckCircle2 className="w-3.5 h-3.5 text-warm-gold flex-shrink-0 mt-0.5" />
+                <span>One-off inspections and reporting</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div className="pt-6 mt-6 border-t border-white/10">
+          <Link
+            to="/contact"
+            className="w-full inline-flex items-center justify-center space-x-2 bg-white/5 hover:bg-warm-gold hover:text-[#0a0e17] text-white font-sans font-bold text-xs px-4 py-3 rounded-xl border border-white/10 transition-all"
+          >
+            <span>Request Quote</span>
+            <ArrowRight className="w-3.5 h-3.5" />
+          </Link>
+        </div>
+      </motion.div>
+
+      {/* Model 2: Monthly Retainer */}
+      <motion.div
+        variants={fadeUp}
+        transition={{ duration: 0.5, ease: "easeOut" }}
+        whileHover={{ y: -4 }}
+        className="rounded-3xl bg-[#0d1321] border border-warm-gold/40 p-8 flex flex-col h-full shadow-2xl relative group hover:border-warm-gold/70 transition-colors duration-300"
+      >
+        <div className="space-y-6 flex-1">
+          <div className="space-y-2">
+            <h3 className="font-sans font-black text-white text-xl sm:text-2xl tracking-tight">
+              Monthly Retainer
+            </h3>
+            <div className="p-3.5 rounded-xl bg-warm-gold/10 border border-warm-gold/30">
+              <span className="text-xs text-warm-gold/80 block font-mono uppercase font-extrabold">Small to Medium Projects</span>
+              <span className="font-sans font-extrabold text-warm-gold text-lg sm:text-xl">
+                Charge per month
+              </span>
+            </div>
+          </div>
+
+          <p className="text-xs sm:text-sm text-[#b8c4d0] leading-relaxed">
+            For projects requiring continuous management, technical oversight, and client representation throughout the project lifecycle.
+          </p>
+
+          <div className="p-4 rounded-2xl bg-white/[0.03] border border-white/10 space-y-2">
+            <span className="font-mono text-xs font-bold uppercase tracking-wider text-white block">
+              Consistent Oversight & Accountability
+            </span>
+            <p className="text-xs text-[#94a3b8] leading-relaxed">
+              Regular reporting, stakeholder coordination, and proactive project management. A minimum engagement period may apply depending on project size, complexity, duration, and level of involvement.
+            </p>
+          </div>
+        </div>
+
+        <div className="pt-6 mt-6 border-t border-white/10">
+          <Link
+            to="/contact"
+            className="w-full inline-flex items-center justify-center space-x-2 bg-warm-gold hover:bg-warm-gold/90 text-[#0a0e17] font-sans font-bold text-xs px-4 py-3 rounded-xl transition-all shadow-lg"
+          >
+            <span>Inquire for Retainer</span>
+            <ArrowRight className="w-3.5 h-3.5" />
+          </Link>
+        </div>
+      </motion.div>
+      {/* Model 3: Percentage of Project Value */}
+      <motion.div
+        variants={fadeUp}
+        transition={{ duration: 0.5, ease: "easeOut" }}
+        whileHover={{ y: -4 }}
+        className="rounded-3xl bg-[#0d1321] border border-white/10 p-8 flex flex-col h-full shadow-xl hover:border-warm-gold/40 transition-colors duration-300 relative group"
+      >
+        <div className="space-y-6 flex-1">
+          <div className="space-y-2">
+            <h3 className="font-sans font-black text-white text-xl sm:text-2xl tracking-tight">
+              Percentage of Project Value
+            </h3>
+            <div className="p-3.5 rounded-xl bg-white/[0.03] border border-white/10">
+              <span className="text-xs text-[#94a3b8] block font-mono uppercase">Commercial Scale</span>
+              <span className="font-sans font-extrabold text-warm-gold text-lg sm:text-xl">
+                % of total project value
+              </span>
+            </div>
+          </div>
+
+          <p className="text-xs sm:text-sm text-[#b8c4d0] leading-relaxed">
+            For large commercial, institutional, infrastructure, and public-sector projects. Fees reflect increased responsibility, complexity, coordination, and risk management.
+          </p>
+
+          <div className="p-4 rounded-2xl bg-white/[0.03] border border-white/10 space-y-2">
+            <span className="font-mono text-xs font-bold uppercase tracking-wider text-white block">
+              Typically used for:
+            </span>
+            <ul className="space-y-2 text-xs text-[#94a3b8]">
+              <li className="flex items-start space-x-2">
+                <CheckCircle2 className="w-3.5 h-3.5 text-warm-gold flex-shrink-0 mt-0.5" />
+                <span>Large-scale infrastructure programmes</span>
+              </li>
+              <li className="flex items-start space-x-2">
+                <CheckCircle2 className="w-3.5 h-3.5 text-warm-gold flex-shrink-0 mt-0.5" />
+                <span>Institutional and public-sector developments</span>
+              </li>
+              <li className="flex items-start space-x-2">
+                <CheckCircle2 className="w-3.5 h-3.5 text-warm-gold flex-shrink-0 mt-0.5" />
+                <span>Multi-phase commercial builds</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div className="pt-6 mt-6 border-t border-white/10">
+          <Link
+            to="/contact"
+            className="w-full inline-flex items-center justify-center space-x-2 bg-white/5 hover:bg-warm-gold hover:text-[#0a0e17] text-white font-sans font-bold text-xs px-4 py-3 rounded-xl border border-white/10 transition-all"
+          >
+            <span>Submit Institutional RFP</span>
+            <ArrowRight className="w-3.5 h-3.5" />
+          </Link>
+        </div>
+      </motion.div>
+
+    </motion.div>
+  </div>
+</section>
       {/* 3. WHY INDEPENDENT MANAGEMENT MATTERS (COMPARISON MATRIX) */}
       <section className="py-20 md:py-28 border-y border-white/10 bg-[#0d1321]">
         <div className="max-w-7xl mx-auto px-6 md:px-12 space-y-16">
@@ -320,9 +497,6 @@ export default function ServicesPage() {
             <h2 className="font-sans font-black text-white text-3xl sm:text-4xl lg:text-5xl tracking-tight">
               Why Independent Oversight Makes the Difference
             </h2>
-            <p className="font-sans text-sm sm:text-base text-[#94a3b8]">
-              Traditional construction setups create inherent conflicts of interest. Here is how our independent consultancy model protects your project.
-            </p>
           </motion.div>
 
           <motion.div
@@ -366,289 +540,43 @@ export default function ServicesPage() {
             </motion.div>
 
             {/* Gamah Independent Model Card */}
-            <motion.div
-              variants={{ hidden: { opacity: 0, x: 30 }, visible: { opacity: 1, x: 0 } }}
-              transition={{ duration: 0.6, ease: "easeOut" }}
-              className="p-8 rounded-3xl bg-navy-dark border border-warm-gold/40 space-y-6 shadow-2xl relative"
-            >
-              <div className="absolute top-4 right-4 bg-warm-gold/10 text-warm-gold border border-warm-gold/30 px-2.5 py-0.5 rounded text-[10px] font-mono uppercase font-bold">
-                Client Shield
-              </div>
-              <div className="flex items-center space-x-3 text-warm-gold">
-                <ShieldCheck className="w-6 h-6" />
-                <h3 className="font-sans font-extrabold text-white text-xl">
-                  Gamah Independent PMC Model
-                </h3>
-              </div>
-              <ul className="space-y-4 text-xs sm:text-sm text-white">
-                <li className="flex items-start space-x-3">
-                  <CheckCircle2 className="w-4 h-4 text-warm-gold flex-shrink-0 mt-0.5" />
-                  <span>Zero contractor kickbacks; 100% loyal to client interests.</span>
-                </li>
-                <li className="flex items-start space-x-3">
-                  <CheckCircle2 className="w-4 h-4 text-warm-gold flex-shrink-0 mt-0.5" />
-                  <span>Independent lab concrete cube and rebar tensile strength testing.</span>
-                </li>
-                <li className="flex items-start space-x-3">
-                  <CheckCircle2 className="w-4 h-4 text-warm-gold flex-shrink-0 mt-0.5" />
-                  <span>Live 24/7 cloud progress dashboard with drone orthomosaic imagery.</span>
-                </li>
-                <li className="flex items-start space-x-3">
-                  <CheckCircle2 className="w-4 h-4 text-warm-gold flex-shrink-0 mt-0.5" />
-                  <span>Escrow payment authorization only after physical work is measured on site.</span>
-                </li>
-              </ul>
-            </motion.div>
+          <motion.div
+  variants={{ hidden: { opacity: 0, x: 30 }, visible: { opacity: 1, x: 0 } }}
+  transition={{ duration: 0.6, ease: "easeOut" }}
+  className="p-8 rounded-3xl bg-navy-dark border border-warm-gold/40 space-y-6 shadow-2xl relative"
+>
+  <div className="flex items-center space-x-3 text-warm-gold">
+    <ShieldCheck className="w-6 h-6" />
+    <h3 className="font-sans font-extrabold text-white text-xl">
+      Gamah Independent PMC Model
+    </h3>
+  </div>
+  <ul className="space-y-4 text-xs sm:text-sm text-white">
+    <li className="flex items-start space-x-3">
+      <CheckCircle2 className="w-4 h-4 text-warm-gold flex-shrink-0 mt-0.5" />
+      <span>Ensures delivery aligns with your goals and quality standards.</span>
+    </li>
+    <li className="flex items-start space-x-3">
+      <CheckCircle2 className="w-4 h-4 text-warm-gold flex-shrink-0 mt-0.5" />
+      <span>Ensures contractor selection and contract terms protect your interests.</span>
+    </li>
+    <li className="flex items-start space-x-3">
+      <CheckCircle2 className="w-4 h-4 text-warm-gold flex-shrink-0 mt-0.5" />
+      <span>Technical oversight and quality assurance verify that work meets specifications at every phase.</span>
+    </li>
+    <li className="flex items-start space-x-3">
+      <CheckCircle2 className="w-4 h-4 text-warm-gold flex-shrink-0 mt-0.5" />
+      <span>Continuous risk management and stakeholder coordination.</span>
+    </li>
+  </ul>
+</motion.div>
 
           </motion.div>
 
         </div>
       </section>
-      <section className="py-20 md:py-28 border-t border-white/10 bg-[#0d1321]/60">
-        <div className="max-w-7xl mx-auto px-6 md:px-12 space-y-16">
-
-          {/* Section Header */}
-          <motion.div
-            className="max-w-5xl space-y-4"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-80px" }}
-            transition={{ duration: 0.6, ease: "easeOut" }}
-          >
-            <h2 className="font-sans font-black text-white text-3xl sm:text-4xl lg:text-5xl tracking-tight">
-              Pricing Structure
-            </h2>
-            <p className="font-sans text-sm sm:text-base md:text-lg text-[#94a3b8] leading-relaxed">
-              Our fee structure is designed to be transparent, flexible, and aligned with project size and complexity. We use three primary pricing models depending on the scope, project stage and level of engagement required, adopting a hybrid pricing strategy that balances recurring income with project-based fees to ensure healthy cash flow and profitability.
-            </p>
-          </motion.div>
-
-          {/* Pricing Models 3-Column Grid */}
-          <motion.div
-            className="grid grid-cols-1 md:grid-cols-3 gap-8 items-stretch"
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, margin: "-80px" }}
-            variants={staggerContainer}
-          >
-
-            {/* Model 1: Fixed Fee */}
-            <motion.div
-              variants={fadeUp}
-              transition={{ duration: 0.5, ease: "easeOut" }}
-              whileHover={{ y: -4 }}
-              className="rounded-3xl bg-[#0d1321] border border-white/10 p-8 flex flex-col justify-between space-y-6 shadow-xl hover:border-warm-gold/40 transition-colors duration-300 relative group"
-            >
-              <div className="space-y-6">
-                <div className="space-y-2">
-                  <h3 className="font-sans font-black text-white text-xl sm:text-2xl tracking-tight">
-                    Fixed Fee
-                  </h3>
-                  <div className="p-3.5 rounded-xl bg-white/[0.03] border border-white/10">
-                    <span className="text-xs text-[#94a3b8] block font-mono uppercase">Fee Range</span>
-                    <span className="font-sans font-extrabold text-warm-gold text-lg sm:text-xl">
-                      ₦150,000 – ₦500,000
-                    </span>
-                    <span className="text-xs text-[#94a3b8] block">/ per assignment</span>
-                  </div>
-                </div>
-
-                <p className="text-xs sm:text-sm text-[#b8c4d0] leading-relaxed">
-                  This model applies to short-term engagements or standalone services that do not require full project lifecycle involvement.
-                </p>
-
-                <div className="space-y-2 pt-2 border-t border-white/10">
-                  <span className="font-mono text-xs font-bold uppercase tracking-wider text-white block">
-                    Typically used for:
-                  </span>
-                  <ul className="space-y-2 text-xs text-[#94a3b8]">
-                    <li className="flex items-start space-x-2">
-                      <CheckCircle2 className="w-3.5 h-3.5 text-warm-gold flex-shrink-0 mt-0.5" />
-                      <span>Design review and technical assessments</span>
-                    </li>
-                    <li className="flex items-start space-x-2">
-                      <CheckCircle2 className="w-3.5 h-3.5 text-warm-gold flex-shrink-0 mt-0.5" />
-                      <span>Procurement or contract advice</span>
-                    </li>
-                    <li className="flex items-start space-x-2">
-                      <CheckCircle2 className="w-3.5 h-3.5 text-warm-gold flex-shrink-0 mt-0.5" />
-                      <span>Project audits and health checks</span>
-                    </li>
-                    <li className="flex items-start space-x-2">
-                      <CheckCircle2 className="w-3.5 h-3.5 text-warm-gold flex-shrink-0 mt-0.5" />
-                      <span>Construction claims or dispute support</span>
-                    </li>
-                    <li className="flex items-start space-x-2">
-                      <CheckCircle2 className="w-3.5 h-3.5 text-warm-gold flex-shrink-0 mt-0.5" />
-                      <span>One-off site inspections or reporting</span>
-                    </li>
-                    <li className="flex items-start space-x-2">
-                      <CheckCircle2 className="w-3.5 h-3.5 text-warm-gold flex-shrink-0 mt-0.5" />
-                      <span>Advisory consultation</span>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-
-              <div className="pt-4 border-t border-white/10">
-                <Link
-                  to="/contact"
-                  className="w-full inline-flex items-center justify-center space-x-2 bg-white/5 hover:bg-warm-gold hover:text-[#0a0e17] text-white font-sans font-bold text-xs px-4 py-3 rounded-xl border border-white/10 transition-all"
-                >
-                  <span>Request Specialist Quote</span>
-                  <ArrowRight className="w-3.5 h-3.5" />
-                </Link>
-              </div>
-            </motion.div>
-
-            {/* Model 2: Monthly Retainer */}
-            <motion.div
-              variants={fadeUp}
-              transition={{ duration: 0.5, ease: "easeOut" }}
-              whileHover={{ y: -4 }}
-              className="rounded-3xl bg-[#0d1321] border border-warm-gold/40 p-8 flex flex-col justify-between space-y-6 shadow-2xl relative group hover:border-warm-gold/70 transition-colors duration-300"
-            >
-              <div className="space-y-6">
-
-                <div className="space-y-2">
-                  <h3 className="font-sans font-black text-white text-xl sm:text-2xl tracking-tight">
-                     Monthly Retainer
-                  </h3>
-                  <div className="p-3.5 rounded-xl bg-warm-gold/10 border border-warm-gold/30">
-                    <span className="text-xs text-warm-gold/80 block font-mono uppercase">Small to Medium Projects</span>
-                    <span className="font-sans font-extrabold text-warm-gold text-lg sm:text-xl">
-                      ₦250,000 – ₦400,000
-                    </span>
-                    <span className="text-xs text-warm-gold/80 block">/ month continuous support</span>
-                  </div>
-                </div>
-
-                <p className="text-xs sm:text-sm text-[#b8c4d0] leading-relaxed">
-                  This model applies where we provide ongoing project management and oversight throughout the construction lifecycle. The client pays a fixed monthly fee starting from ₦250,000 to ₦400,000/month for continuous support throughout the project duration.
-                </p>
-
-                <div className="p-4 rounded-2xl bg-white/[0.03] border border-white/10 space-y-2 text-xs text-[#94a3b8]">
-                  <p className="text-white font-semibold">
-                    Cost Certainty &amp; Continuous Oversight
-                  </p>
-                  <p className="leading-relaxed">
-                    This structure provides cost certainty while ensuring consistent oversight and accountability. A minimum monthly retainer applies depending on project size, complexity, duration, and level of site involvement.
-                  </p>
-                </div>
-              </div>
-
-              <div className="pt-4 border-t border-white/10">
-                <Link
-                  to="/contact"
-                  className="w-full inline-flex items-center justify-center space-x-2 bg-warm-gold hover:bg-warm-gold/90 text-[#0a0e17] font-sans font-bold text-xs px-4 py-3 rounded-xl transition-all shadow-lg"
-                >
-                  <span>Inquire for Retainer</span>
-                  <ArrowRight className="w-3.5 h-3.5" />
-                </Link>
-              </div>
-            </motion.div>
-
-            {/* Model 3: Percentage of Project Value */}
-            <motion.div
-              variants={fadeUp}
-              transition={{ duration: 0.5, ease: "easeOut" }}
-              whileHover={{ y: -4 }}
-              className="rounded-3xl bg-[#0d1321] border border-white/10 p-8 flex flex-col justify-between space-y-6 shadow-xl hover:border-warm-gold/40 transition-colors duration-300 relative group"
-            >
-              <div className="space-y-6">
-                <div className="space-y-2">
-                  <h3 className="font-sans font-black text-white text-xl sm:text-2xl tracking-tight">
-                    Percentage of Project Value
-                  </h3>
-                  <div className="p-3.5 rounded-xl bg-white/[0.03] border border-white/10">
-                    <span className="text-xs text-[#94a3b8] block font-mono uppercase">Commercial Scale</span>
-                    <span className="font-sans font-extrabold text-warm-gold text-lg sm:text-xl">
-                      2% – 8%
-                    </span>
-                    <span className="text-xs text-[#94a3b8] block">of total construction cost</span>
-                  </div>
-                </div>
-
-                <p className="text-xs sm:text-sm text-[#b8c4d0] leading-relaxed">
-                  For large-scale commercial, institutional, and public-sector projects, fees are calculated as a percentage of the total construction cost. This model reflects the increased complexity, risk exposure, and responsibility associated with large projects.
-                </p>
-
-                <div className="space-y-2 pt-2 border-t border-white/10">
-                  <span className="font-mono text-xs font-bold uppercase tracking-wider text-white block">
-                    Typical Ranges:
-                  </span>
-                  <ul className="space-y-2 text-xs text-[#94a3b8]">
-                    <li className="p-2.5 rounded-lg bg-white/[0.02] border border-white/5 flex items-center justify-between">
-                      <span>Small, large-scale developments</span>
-                      <span className="font-bold text-warm-gold">5% – 8%</span>
-                    </li>
-                    <li className="p-2.5 rounded-lg bg-white/[0.02] border border-white/5 flex items-center justify-between">
-                      <span>Medium-to-large commercial projects</span>
-                      <span className="font-bold text-warm-gold">3% – 5%</span>
-                    </li>
-                    <li className="p-2.5 rounded-lg bg-white/[0.02] border border-white/5 flex items-center justify-between">
-                      <span>Major infrastructure or public projects</span>
-                      <span className="font-bold text-warm-gold">2% – 4%</span>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-
-              <div className="pt-4 border-t border-white/10">
-                <Link
-                  to="/contact"
-                  className="w-full inline-flex items-center justify-center space-x-2 bg-white/5 hover:bg-warm-gold hover:text-[#0a0e17] text-white font-sans font-bold text-xs px-4 py-3 rounded-xl border border-white/10 transition-all"
-                >
-                  <span>Submit Institutional RFP</span>
-                  <ArrowRight className="w-3.5 h-3.5" />
-                </Link>
-              </div>
-            </motion.div>
-
-          </motion.div>
-
-        </div>
-      </section>
-      {/* 5. CONSULTATION CTA FOOTER BANNER */}
-      <section className="py-24 bg-[#0d1321] text-center border-t border-white/10 relative overflow-hidden">
-        <motion.div
-          className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-warm-gold/5 blur-3xl rounded-full pointer-events-none"
-          animate={{ opacity: [0.5, 1, 0.5] }}
-          transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
-        ></motion.div>
-
-        <motion.div
-          className="max-w-4xl mx-auto px-6 space-y-8 relative z-10"
-          initial={{ opacity: 0, y: 24 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-80px" }}
-          transition={{ duration: 0.6, ease: "easeOut" }}
-        >
-          <h2 className="font-sans font-black text-white text-3xl sm:text-5xl tracking-tight leading-tight">
-            Ready to Protect Your Capital &amp; Ensure Construction Excellence?
-          </h2>
-          <p className="font-sans text-[#94a3b8] text-base sm:text-lg max-w-2xl mx-auto leading-relaxed">
-            Speak to our senior civil engineers and quantity surveyors in Lagos or London to review your drawings, BOQ documents, or active construction sites.
-          </p>
-
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-4">
-            <Link
-              to="/contact"
-              className="w-full sm:w-auto inline-flex items-center justify-center space-x-2 bg-warm-gold hover:bg-warm-gold/90 text-[#0a0e17] font-sans font-bold text-base px-8 py-4 rounded-xl transition-all shadow-xl hover:scale-[1.02]"
-            >
-              <span>Schedule Service Advisory</span>
-              <ArrowRight className="w-4 h-4" />
-            </Link>
-            <Link
-              to="/portfolio"
-              className="w-full sm:w-auto inline-flex items-center justify-center space-x-2 bg-white/5 hover:bg-white/10 text-white font-sans font-semibold text-base px-8 py-4 rounded-xl border border-white/10 transition-all"
-            >
-              <span>View Case Studies</span>
-            </Link>
-          </div>
-        </motion.div>
-      </section>
-
+  
+     <HomeCta />
       {/* 6. FULL SCOPE MODAL POPUP */}
       <AnimatePresence>
         {selectedService && (
