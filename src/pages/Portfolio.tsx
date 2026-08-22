@@ -241,9 +241,9 @@ export default function PortfolioPage() {
           <motion.p
             variants={fadeUp}
             transition={{ duration: 0.7, ease: "easeOut" }}
-            className="font-sans text-base sm:text-lg text-slate-200 leading-relaxed max-w-2xl mx-auto font-normal"
+            className="font-sans text-base sm:text-lg text-slate-200 leading-relaxed max-w-3xl mx-auto font-normal"
           >
-            Independent project management, structural engineering compliance, and capital protection across West Africa. Delivering UK-grade governance and COREN certified project oversight.
+          Independent project advisory and management across Africa. Combining local market knowledge with international best practices to protect investments and improve project outcomes.
           </motion.p>
 
           <motion.div
@@ -274,13 +274,13 @@ export default function PortfolioPage() {
             className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 md:gap-12"
           >
             {[
-              { Icon: Building2, title: "Building Construction", desc: "Full client-side structural execution oversight, contractor coordination, and engineering compliance on active sites." },
-              { Icon: Wrench, title: "Building Repairs", desc: "Structural retrofitting, defect remediation, concrete cube testing, and comprehensive rebar integrity audits." },
-              { Icon: Hammer, title: "Demolition", desc: "Controlled site deconstruction, soil excavation testing, structural removal, and safety perimeter enforcement." },
-              { Icon: Layers, title: "Foundation", desc: "Piling cap integrity verification, soil load capacity testing, and basement waterproofing oversight." },
-              { Icon: Paintbrush, title: "Painting & Exterior", desc: "Facade finishing audits, MEP ductwork compliance, and luxury interior fit-out snagging inspections." },
-              { Icon: ShieldCheck, title: "Site Management", desc: "24/7 site supervision, escrow payment authorization, contractor auditing, and COREN safety compliance." }
-            ].map(({ Icon, title, desc }) => (
+              { Icon: Building2, title: "Pre-Project and Planning", desc: "Feasibility studies, project planning and coordination, design review and coordination, cost planning and budget monitoring and risk management." },
+{ Icon: Wrench, title: "Procurement and Commercial Advisory", desc: "Procurement strategy, tender evaluation and contractor selection support, contract review, and cost and commercial review." },
+{ Icon: Hammer, title: "Technical Oversight and Quality Assurance", desc: "Project delivery monitoring, technical oversight, quality assurance, compliance verification, inspections, testing, and technical review." },
+{ Icon: Layers, title: "Project Controls and Reporting", desc: "Programme and schedule monitoring, cost and budget monitoring, and transparent progress reporting." },
+{ Icon: Paintbrush, title: "Contract Governance and Risk", desc: "Contract administration, risk management, and stakeholder coordination to ensure aligned governance and decision-making." },
+{ Icon: ShieldCheck, title: "Project Close-out and Handover", desc: "Project close-out, defect management, final inspections, and documentation and handover." }  
+              ].map(({ Icon, title, desc }) => (
               <motion.div
                 key={title}
                 variants={fadeUp}
@@ -314,9 +314,9 @@ export default function PortfolioPage() {
           className="lg:col-span-5 bg-[#4a90d9] text-white p-8 sm:p-12 lg:p-16 flex flex-col justify-center space-y-10"
         >
           {[
-            { title: "Eco Friendly Construction", desc: "Sustainable materials specification, energy-efficient HVAC oversight, and environmental risk mitigation across all capital developments." },
-            { title: "The Newest Technology Repairs", desc: "Real-time HD webcam site feeds, 3D orthomosaic drone scans, and automated Earned Value Management (EVM) tracking for overseas clients." },
-            { title: "High Quality Construction Management", desc: "Rigorous COREN engineering supervision paired with UK RICS commercial cost controls to protect client capital from cost inflation." }
+          { title: "Independent Governance", desc: "We act solely in the client's interest with no ties to execution teams or suppliers, ensuring transparent oversight and protecting your investment throughout the project lifecycle." },
+{ title: "Modern Digital Controls", desc: "We leverage digital technologies and cloud-based reporting to improve efficiency, reduce operating costs, and provide real-time project visibility." },
+{ title: "International Best Practices", desc: "We combine local market knowledge with international project management standards to improve quality, manage risk, and deliver lasting value." } 
           ].map(({ title, desc }) => (
             <motion.div
               key={title}
@@ -353,11 +353,11 @@ export default function PortfolioPage() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 text-xs sm:text-sm text-slate-600 leading-relaxed pt-2">
             <p>
-              Whether safeguarding an individual diaspora residential build in Ikoyi, or managing technical MEP compliance for multi-storey data centers in Abuja, Gamah Projects applies uniform engineering rigor. We treat every Naira of client capital with fiduciary responsibility.
-            </p>
-            <p>
-              Our independent project management consultancy operates entirely free from contractor conflicts. By combining site-level engineering inspections with digital cloud dashboards, we give investors total transparency, verified milestone sign-offs, and complete peace of mind.
-            </p>
+  From feasibility to handover, we support developers, corporates, and public-sector clients with independent oversight that keeps projects on track.
+</p>
+<p>
+  We combine local market knowledge with international best practices to deliver transparency, manage risk, and protect your investment.
+</p>
           </div>
         </motion.div>
       </section>
@@ -441,75 +441,6 @@ export default function PortfolioPage() {
 
         </div>
       </section>
-
-      {/* 5. WHY WORK WITH GAMAH PROJECTS SECTION */}
-      {/* 5. WHY WORK WITH GAMAH PROJECTS SECTION */}
-      <section className="py-20 bg-[#0d1321] border-y border-white/10">
-        <div className="max-w-7xl mx-auto px-6 md:px-12 space-y-12">
-
-          <motion.div
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, amount: 0.4 }}
-            variants={fadeUp}
-            transition={{ duration: 0.6, ease: "easeOut" }}
-            className="text-center max-w-3xl mx-auto space-y-3"
-          >
-            <h2 className="font-sans font-black text-white text-3xl sm:text-4xl">
-              Why Work With Gamah Projects?
-            </h2>
-            <p className="font-sans text-sm sm:text-base text-[#94a3b8]">
-              We integrate civil engineering, specialized MEP ventilation systems, and international procurement governance under one independent umbrella.
-            </p>
-          </motion.div>
-
-          <motion.div
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, amount: 0.2 }}
-            variants={staggerContainer}
-            className="grid grid-cols-1 md:grid-cols-3 gap-8"
-          >
-            {[
-              {
-                Icon: ShieldCheck,
-                title: "Independent Advice. Unbiased Decisions.",
-                desc: "Gamah operates solely on the client's behalf, unlike firms that may have an interest in design, construction or contracting. With our independent project management strategy, you'll get objective advice, transparent reporting, and professional oversight without the conflict of interest, to help you make better decisions."
-              },
-              {
-                Icon: Wrench,
-                title: "Technical Skills and Beyond Project Management Skills.",
-                desc: "Gamah integrates project management with practical technical management, such as design review and buildability assessments, quality assurance, inspection, testing, cost and programme monitoring, risk management and contract administration. Not only do we monitor progress, we know what is going on the project and help ensure that it is delivered to the required standard."
-              },
-              {
-                Icon: Building2,
-                title: "International Standards, Local Understanding.",
-                desc: "We introduce international project management experience and practices from high-end commercial construction in the UK to Nigeria and Africa. Gamah leverages state-of-the-art digital project controls, reporting frameworks, and tried and tested governance processes to provide clients with the systems, transparency, and accountability they need to safeguard investment and ensure projects are completed with greater confidence."
-              }
-            ].map(({ Icon, title, desc }) => (
-              <motion.div
-                key={title}
-                variants={fadeUp}
-                transition={{ duration: 0.5, ease: "easeOut" }}
-                whileHover={{ y: -4 }}
-                className="p-8 rounded-3xl bg-[#0a0e17] border border-white/10 space-y-4"
-              >
-                <div className={`w-12 h-12 rounded-2xl bg-cyan-400/10 border border-cyan-400/30 flex items-center justify-center text-amber-400`}>
-                  <Icon className="w-6 h-6" />
-                </div>
-                <h3 className="font-sans font-bold text-white text-xl">
-                  {title}
-                </h3>
-                <p className="text-xs sm:text-sm text-[#94a3b8] leading-relaxed">
-                  {desc}
-                </p>
-              </motion.div>
-            ))}
-          </motion.div>
-
-        </div>
-      </section>
-      {/* 6. REQUEST PROPOSAL SECTION */}
       <HomeCta />
 
       {/* 8. PROJECT DETAIL MODAL */}

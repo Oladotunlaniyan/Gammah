@@ -1,6 +1,5 @@
-import React from "react";
 import { motion } from "motion/react";
-
+import BrixLogo from "../assets/images/photo_2026-08-22_14-51-40.jpg";
 function IdslLogo() {
   return (
     <img
@@ -22,10 +21,21 @@ function ThreeMPlusLogo() {
     />
   );
 }
+function BrixAndTowers() {
+  return (
+    <img
+      src={BrixLogo}
+      alt="Brix and Towers logo"
+      className="h-9 sm:h-10 w-auto object-contain"
+      loading="lazy"
+    />
+  );
+}
 
 const logos = [
   { key: "idsl", Component: IdslLogo },
   { key: "threemplus", Component: ThreeMPlusLogo },
+  { key: "brixandtowers", Component: BrixAndTowers },
 ];
 const REPEATS_PER_UNIT = 8;
 const repeatUnit = Array.from({ length: REPEATS_PER_UNIT }, () => logos).flat();
